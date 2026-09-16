@@ -1,0 +1,7 @@
+Continue the Carta Fund ERP implementation in this repository.
+
+Read @docs/BUILD_STATUS.md, @docs/carta/implementation_tracker.json, @prompts/BUILD_CARTA_FUND_ERP.md, and the relevant research sections before changing code. Inspect git status and existing tests. Do not restart or redesign already-working features without a specific reason.
+
+Confirm the last working vertical slice, run the relevant existing checks, then implement the next unfinished milestone. Preserve all product boundaries, local persistence, financial invariants, permissions, and simulation labels. Update the coverage tracker with actual implementation and test evidence. Fix failures instead of marking required tests skipped.
+
+Continue with implementation and browser verification, not another high-level plan. At handoff, distinguish verified behavior, unrun checks, and remaining work.

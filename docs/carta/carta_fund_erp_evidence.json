@@ -1,0 +1,2128 @@
+{
+  "title": "Carta Fund ERP — Screen and Behavior Research Specification",
+  "research_date": "2026-09-16",
+  "scope": "Public official Carta documentation, product pages, release notes, developer references and written product-tour transcripts. No prior recreation project used.",
+  "status": "Document-grounded functional specification; not an authenticated visual-parity audit and not a production financial-engine specification.",
+  "evidence_legend": {
+    "D": "Documented by a retrieved official source; not necessarily executed or visually verified.",
+    "V": "Directly inspected visual evidence. No full current screen in this inventory is rated V.",
+    "I": "Proposed implementation interpretation or synthetic acceptance requirement.",
+    "U": "Unresolved or unavailable evidence."
+  },
+  "counts": {
+    "source_records": 74,
+    "screen_families": 53,
+    "forecasting_screen_families": 33,
+    "erp_screen_families": 20,
+    "workflow_maps": 12,
+    "acceptance_contracts": 26,
+    "open_gaps": 16,
+    "visually_verified_current_full_screens": 0
+  },
+  "principles": [
+    {
+      "title": "Separate product surfaces",
+      "description": "Forecasting, fund-administration visual accounting, Deal CRM, LP CRM, LP Portal and allocator analytics are distinct experiences. A shared brand does not establish one identical shell or menu.",
+      "sources": [
+        "P01",
+        "T01",
+        "T02",
+        "T03",
+        "T06",
+        "P06"
+      ]
+    },
+    {
+      "title": "Separate economic states",
+      "description": "Use different concepts for a construction plan, actual investment history, current forecast, investment case, fund scenario and posted accounting. This proposed architecture preserves documented distinctions; it is not Carta’s private schema.",
+      "sources": [
+        "F10",
+        "F17",
+        "F18",
+        "F11",
+        "T09"
+      ]
+    },
+    {
+      "title": "Treat save, calculate, approve and post as different actions",
+      "description": "Do not substitute a toast for a state transition. Some inputs require nested save, some require recalculation, some need review, and some enter accounting only when posted.",
+      "sources": [
+        "F16",
+        "F18",
+        "F20",
+        "T09"
+      ]
+    },
+    {
+      "title": "Keep records scoped to legal entities and people",
+      "description": "Connected records still have legal-entity, role and disclosure boundaries. LP-specific permissions and date-cutoff policies must change data access, not just hide tabs.",
+      "sources": [
+        "T06",
+        "F24",
+        "F25"
+      ]
+    },
+    {
+      "title": "Preserve source and freshness",
+      "description": "A company’s collected KPI, an imported investment event, a manual forecast assumption and a warehouse-derived metric have different provenance and update schedules.",
+      "sources": [
+        "I01",
+        "I02",
+        "I03",
+        "D01"
+      ]
+    },
+    {
+      "title": "Distinguish service workflows from software calculations",
+      "description": "Tax preparation, formation, compliance review and bank payment execution include human or external systems. A prototype can model statuses but must not claim those services were actually performed.",
+      "sources": [
+        "T07",
+        "P05",
+        "T12",
+        "T16"
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "id": "FF01",
+      "area": "Fund Forecasting",
+      "title": "Home and fund creation",
+      "entry": "Home → Create a New Fund",
+      "controls": "Strategy templates and fund creation action.",
+      "documented_behavior": "Select a starting strategy, enter the construction wizard, then complete setup. A template initializes assumptions; it is not proof of an investment policy.",
+      "unverified": "Exact Home cards, sort/filter controls, delete/duplicate actions and empty state.",
+      "sources": [
+        "F01"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF02",
+      "area": "Fund Forecasting",
+      "title": "Construction Wizard",
+      "entry": "New fund or existing construction configuration",
+      "controls": "General; Sector Profiles; Allocations; Fees/Expenses; optional Recycling; Waterfall; optional Limited Partners.",
+      "documented_behavior": "These seven documented sections define the model. Treat them as persistent economic inputs rather than disposable onboarding answers.",
+      "unverified": "Stepper appearance, save timing between sections, unsaved-change dialogs and complete validation copy.",
+      "sources": [
+        "F02"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF03",
+      "area": "Fund Forecasting",
+      "title": "General fund configuration",
+      "entry": "Construction → General",
+      "controls": "Fund name, currency, start/end dates, commitment, GP commitment, call cadence, commitment schedules and vehicle structure.",
+      "documented_behavior": "An omitted end date supports an evergreen model. SPV/no-construction mode disables automatic construction of new investments. A traditional construction fund and an actual legally formed SPV are different concepts.",
+      "unverified": "All current defaults; eligibility of credit-line options; exact validation and logo-placement behavior.",
+      "sources": [
+        "F03"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF04",
+      "area": "Fund Forecasting",
+      "title": "Sector-profile stage editor",
+      "entry": "Construction → Sector Profiles",
+      "controls": "Stage rows; round size; pre/post-money value; option-pool dilution; graduation/exit probabilities; exit values; months to next stage/exit; add/remove/reorder.",
+      "documented_behavior": "Failure probability is the remainder after graduation and exit. Their sum must not exceed 100%; the last stage cannot graduate. Reordering is documented. Stage timing is relative to entering that stage. Applying market data can replace profile assumptions.",
+      "unverified": "Exact rounding, validation messages, full market-data filter and overwrite confirmation UI.",
+      "sources": [
+        "F04"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF05",
+      "area": "Fund Forecasting",
+      "title": "Allocation editor",
+      "entry": "Current Allocations → New Allocation, or open an existing allocation",
+      "controls": "Profile, entry stage, share of investable capital, initial amount/ownership target, follow-on amount/ownership target, participation and deployment horizon.",
+      "documented_behavior": "The model deploys the allocation budget. Larger follow-on reserves can reduce the projected number of initial deals. Initial deployment pacing follows the investment horizon; follow-on timing follows stage graduation timing.",
+      "unverified": "Granular timing controls beyond the documented horizon, dirty-state behavior and all allocation-sum constraints.",
+      "sources": [
+        "F05",
+        "F34"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF06",
+      "area": "Fund Forecasting",
+      "title": "Fee and expense schedules",
+      "entry": "Construction → Fees/Expenses",
+      "controls": "Fee profiles with dated tiers, percentage and fee basis; additional tiers; expenses with monthly amount and dates.",
+      "documented_behavior": "Different LPs can use different fee profiles. Bases include commitments, several called-capital measures, invested capital, fair value and unrealized cost. Recycling settings exist at fee-tier level.",
+      "unverified": "Every tier-overlap rule, day-count convention, fee-on-fee behavior and rounding.",
+      "sources": [
+        "F06"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF07",
+      "area": "Fund Forecasting",
+      "title": "Exit-recycling configuration",
+      "entry": "Construction → Recycling",
+      "controls": "Recyclable percentage, cap relative to commitments, recycling term, optional use of anticipated proceeds.",
+      "documented_behavior": "The anticipation option allows earlier deployment based on future exits; otherwise recycling waits for exits. Fee recycling and exit recycling have different caps. Neither represents fresh LP commitments.",
+      "unverified": "Interaction of simultaneous caps, shortfall handling and detailed ledger presentation.",
+      "sources": [
+        "F07"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF08",
+      "area": "Fund Forecasting",
+      "title": "Fund-level waterfall assumptions",
+      "entry": "Construction → Waterfall",
+      "controls": "European/American structure, preferred return/hurdle, catch-up and carried-interest settings.",
+      "documented_behavior": "The documentation distinguishes whole-fund and deal-level distribution approaches. Returns on the GP commitment are separate from GP carry.",
+      "unverified": "Complete legal waterfall semantics, clawback interpretation and uncommon tier structures. Do not confuse this with multi-entity ERP waterfall modeling.",
+      "sources": [
+        "F08"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF09",
+      "area": "Fund Forecasting",
+      "title": "Modeled limited partners",
+      "entry": "Construction → Limited Partners",
+      "controls": "Add/import LPs, contributions/schedules, fee-profile assignment, optional custom profit splits.",
+      "documented_behavior": "Without detailed LPs, returns can be modeled for an aggregate LP bucket. Custom splits can vary by distribution tier; this is a modeling input, not the LP-facing investor portal.",
+      "unverified": "Links to actual legal investor records, contribution-schedule error rules and current entitlement.",
+      "sources": [
+        "F09"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF10",
+      "area": "Fund Forecasting",
+      "title": "Construction/Current analytical dashboard",
+      "entry": "Model/dashboard header forecast selector",
+      "controls": "Construction Forecast and Current Forecast selection; computed analytics.",
+      "documented_behavior": "Construction excludes actual investments. Current incorporates actual investments and projects remaining deployment. Changes to construction assumptions after deployment concern remaining capital, not rewriting historical transactions.",
+      "unverified": "Current full tab order, chart layouts, hover behavior, axes, legends, zooming, default periods and exact navigation shell.",
+      "sources": [
+        "F10"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF11",
+      "area": "Fund Forecasting",
+      "title": "Monthly cash-flow actuals editor",
+      "entry": "Model View → Period → Current Forecast + Monthly → Edit Actuals",
+      "controls": "Editable cells for commitments, calls, fees, expenses, recycling and distributions; Save Edits.",
+      "documented_behavior": "The guide identifies editable actuals in blue. Saving changes actual cash-flow reporting, but does not itself replan future investments or change projected deal count/investable capital.",
+      "unverified": "Cell-level validation, locked periods, paste handling, undo and conflict resolution.",
+      "sources": [
+        "F11"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF12",
+      "area": "Fund Forecasting",
+      "title": "Actual-investments table",
+      "entry": "Investments",
+      "controls": "Company and investment fields, status, ownership, invested/reserved capital, current/exit returns and reporting attributes.",
+      "documented_behavior": "This is a consolidated view of actual portfolio records. Planned is a forecasting investment status; it is not automatically a Deal CRM pipeline stage.",
+      "unverified": "Precise default columns, sorting, filtering, pagination and row-action menus in the current account.",
+      "sources": [
+        "F12",
+        "F13"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF13",
+      "area": "Fund Forecasting",
+      "title": "Saved table views and report configuration",
+      "entry": "Investments → Columns; Portfolio Summary report → Customize",
+      "controls": "Select fields; save a default/new/replacement view; load an investment view into report configuration.",
+      "documented_behavior": "A saved column selection can be reused for an Excel portfolio report. Field catalogs vary by surface/version; do not fix the product to a marketing count of metrics.",
+      "unverified": "Per-user versus shared ownership of saved views, exact report format and export formatting.",
+      "sources": [
+        "F14"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF14",
+      "area": "Fund Forecasting",
+      "title": "Investment creation and editor",
+      "entry": "Investments → Add Investment → profile → entry stage",
+      "controls": "Name and descriptive fields; first investment event; exit event; bulk Excel import.",
+      "documented_behavior": "A future first investment is Planned. The guide requires at least one investment round and one exit event, which may be projected. First investment date cannot precede fund inception. Imported rounds need future/exit assumptions reviewed.",
+      "unverified": "Complete forms, import-template columns, merge/deduplication, delete behavior and status-transition rules.",
+      "sources": [
+        "F15"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF15",
+      "area": "Fund Forecasting",
+      "title": "Round/event editor",
+      "entry": "Investment case → Add event → Edit",
+      "controls": "Financing, ownership update, valuation update, secondary purchase, partial sale, investment income; reserve/pro-rata and priced-share inputs.",
+      "documented_behavior": "Closing the nested event editor is followed by Save Changes on the investment. Future rounds can be generated from a profile. Priced-share entry is not the SAFE/note input flow.",
+      "unverified": "Exact dirty-state/cancel behavior and calculation order for same-date events.",
+      "sources": [
+        "F16"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF16",
+      "area": "Fund Forecasting",
+      "title": "Investment performance cases",
+      "entry": "Investment editor → Add Case / case Actions",
+      "controls": "Case probabilities, event sequences, clone, historical synchronization, future-round generation and case results.",
+      "documented_behavior": "Case probability and within-case graduation probability are distinct. Cloning a case copies its rounds; historical synchronization copies historical events only. The guide allows up to ten cases per investment.",
+      "unverified": "Probability normalization, treatment of missing probabilities and deletion confirmations.",
+      "sources": [
+        "F17"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF17",
+      "area": "Fund Forecasting",
+      "title": "Fund-wide Scenario Builder",
+      "entry": "Sidebar → Scenario Builder → Create Scenario",
+      "controls": "Scenario name, modified assumptions across construction/investments, recalculation, save and comparison results.",
+      "documented_behavior": "A scenario combines changes at fund level; choosing an investment case is only one input. Recalculate and Save Scenario are documented actions.",
+      "unverified": "Exact unsaved-state appearance, baseline comparison columns and whether/how a scenario can be applied to the base model.",
+      "sources": [
+        "F18"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF18",
+      "area": "Fund Forecasting",
+      "title": "Time Machine historical view",
+      "entry": "Investments → Time Machine in the top-right header",
+      "controls": "Historical month, active-state button, Reset to today.",
+      "documented_behavior": "Investment metrics recalculate for the selected month. The guide describes a red active-state control. Reset restores the present-day view. This is not restoration of an old saved version.",
+      "unverified": "Effect on every other module, date boundary conventions and whether the selection survives navigation/reload.",
+      "sources": [
+        "F19"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF19",
+      "area": "Fund Forecasting",
+      "title": "KPI definitions and values",
+      "entry": "Sidebar → KPI Manager → company → Add KPI",
+      "controls": "Predefined/custom metrics, quantitative/qualitative types, cadence, periods and data grid.",
+      "documented_behavior": "Metrics are saved against a company; linked source collection and user-entered values must retain their distinct provenance.",
+      "unverified": "Every allowed metric type, precise missing-data convention and definition-edit behavior.",
+      "sources": [
+        "F20"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF20",
+      "area": "Fund Forecasting",
+      "title": "KPI requests and review",
+      "entry": "KPI Manager → Requests",
+      "controls": "Contacts, request period, selected metrics, access protection, send/copy link, review and approval settings.",
+      "documented_behavior": "Request states include Pending Update and Pending Review. Recipients submit without creating an account. Managers compare old/new values and accept or reject. Auto-Approve can bypass manual review.",
+      "unverified": "Email delivery errors, reminder defaults, link expiry and exact permission matrix.",
+      "sources": [
+        "F20"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF21",
+      "area": "Fund Forecasting",
+      "title": "Custom formula builder",
+      "entry": "Sidebar → Formulas",
+      "controls": "Named variables from KPIs or reporting fields; relative periods; equation and output type; Calculate; Save/Load Formula.",
+      "documented_behavior": "Formula results can be inspected and downloaded. Relative KPI periods shift when recalculated, rather than remaining fixed to the original calendar dates.",
+      "unverified": "Expression grammar, null/error propagation, cross-company aggregation and security implementation.",
+      "sources": [
+        "F21"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF22",
+      "area": "Fund Forecasting",
+      "title": "Follow-on reserve analysis",
+      "entry": "Insights → Optimal Reserves Ranking",
+      "controls": "Company comparison of expected return on the next reserve dollar, planned reserves and deployed capital.",
+      "documented_behavior": "The ranking measures incremental follow-on economics, not simply the return already achieved on the original investment. It is an analytical view, not an instruction to automatically transact.",
+      "unverified": "Exact chart encoding, full return calculation, optimization constraints and interactive selection behavior.",
+      "sources": [
+        "F22"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF23",
+      "area": "Fund Forecasting",
+      "title": "Document Center",
+      "entry": "Documents → Add",
+      "controls": "Document name, optional investment/category association and bulk upload.",
+      "documented_behavior": "Files can be organized within forecasting and linked to investment context. These are not automatically the full audit/tax-document repository.",
+      "unverified": "Previewer, version replacement, deletion, malware scanning and folder behavior.",
+      "sources": [
+        "F23"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF24",
+      "area": "Fund Forecasting",
+      "title": "Publishing controls and reader",
+      "entry": "Publish → Start Publishing",
+      "controls": "Read-only link, optional access protection, GP-data visibility, LP-specific disclosure options.",
+      "documented_behavior": "Publishing is different from inviting an editor. The published experience is read-only; LP-scoped disclosure can exclude other LP returns.",
+      "unverified": "Live-link versus snapshot refresh semantics, revocation, expiry, exact reader layout and export permissions.",
+      "sources": [
+        "F24"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF25",
+      "area": "Fund Forecasting",
+      "title": "Collaborator administration",
+      "entry": "Home → Manage Collaborator, or sidebar → Collaborators",
+      "controls": "Email invitation and section-level read/write permissions.",
+      "documented_behavior": "The guide describes an account requirement and a default full-write invitation. Do not assume a read-only default merely because that would be safer design.",
+      "unverified": "Every permission row, invitation expiry and current plan requirements.",
+      "sources": [
+        "F25"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF26",
+      "area": "Fund Forecasting",
+      "title": "Multi-fund analytical view",
+      "entry": "Home → Multi-Fund View → Create a Multi-Fund View",
+      "controls": "Name, vehicle selection and Save.",
+      "documented_behavior": "Selected vehicles are pooled for analytics; the guide requires the same fund currency. This is not an ownership transaction or a fund-of-funds investment.",
+      "unverified": "Exact consolidated metric logic, eliminations, supported count and current packaging.",
+      "sources": [
+        "F26"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF27",
+      "area": "Fund Forecasting",
+      "title": "Round-currency and FX controls",
+      "entry": "Investment → round editor",
+      "controls": "Round currency and exchange rate; manual entry or lookup; valuation update.",
+      "documented_behavior": "Round inputs retain their currency while fund reporting uses fund currency. The guide describes later valuation updates for FX revaluation; closing the round still requires investment-level save.",
+      "unverified": "Rate source/date conventions, precision and FX attribution in every metric.",
+      "sources": [
+        "F27"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF28",
+      "area": "Fund Forecasting",
+      "title": "Investment integration review",
+      "entry": "Carta/Forecasting integration setup and update review",
+      "controls": "Entity/company matching, selection of incoming rounds, retention of existing events and source indicators.",
+      "documented_behavior": "Release documentation permits keeping forecasting events and selecting imported records. Fund-admin customers can source transactions from the schedule of investments, enriched by cap-table financing history.",
+      "unverified": "Exact permission roles, retry/conflict states and deep setup substeps; non-Carta support described as coming soon is not assumed live.",
+      "sources": [
+        "I01",
+        "R01"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF29",
+      "area": "Fund Forecasting",
+      "title": "Fund-actuals integration",
+      "entry": "Fund-admin integration setup/review",
+      "controls": "Partner details, commitments, capital calls, distributions, fees and expenses imported from accounting.",
+      "documented_behavior": "This integration connects official fund actuals to modeling. It is separate from importing company cap-table rounds and from company KPI synchronization.",
+      "unverified": "Field-level overwrite precedence, posting-versus-cash conventions, lock periods and detailed sync status UI.",
+      "sources": [
+        "I02",
+        "R03"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF30",
+      "area": "Fund Forecasting",
+      "title": "Company-financials synchronization",
+      "entry": "Data Collection/RFI → linked KPI Manager",
+      "controls": "Linked company financials and KPIs; downstream analytics.",
+      "documented_behavior": "For the documented joint-product integration, Data Collection/RFI is the source of truth and confirmed data synchronizes into forecasting. Do not confuse this with manual KPI request approval settings.",
+      "unverified": "Bidirectional edits, exact refresh delay and conflict behavior.",
+      "sources": [
+        "I03",
+        "R02"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF31",
+      "area": "Fund Forecasting",
+      "title": "SAFE/note conversion and ownership updates",
+      "entry": "Round security type → SAFE/Note; subsequent priced round",
+      "controls": "Investment amount, round size, cap; conversion simulation or post-conversion ownership/share inputs.",
+      "documented_behavior": "Ownership after conversion is supplied through an ownership update or priced-round share data. The guide recommends the cap-table calculator for competing instruments. A default value based on the latest cap can be overridden by a valuation event.",
+      "unverified": "Full calculator layout, conversion engine and uncapped-instrument treatment beyond the documented modeling workarounds.",
+      "sources": [
+        "F31"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF32",
+      "area": "Fund Forecasting",
+      "title": "Investment liquidation preferences",
+      "entry": "Case Actions → Liq Prefs → enable",
+      "controls": "Preference amount, participation/cap settings and surrounding preference stack; import from another case.",
+      "documented_behavior": "An active indicator appears on the exit event. This affects an investment exit, not the GP/LP fund waterfall.",
+      "unverified": "The guide has an inconsistent senior/junior label-description pairing. Verify actual stack ordering before implementing calculations.",
+      "sources": [
+        "F32"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "FF33",
+      "area": "Fund Forecasting",
+      "title": "Fund-of-funds investment",
+      "entry": "Investments → Fund Investments → Add a Portfolio Fund",
+      "controls": "Existing modeled portfolio fund, investment amount, Construction/Current source forecast and Save.",
+      "documented_behavior": "Parent and child are separately modeled funds. The child’s calls/LP distributions become the parent’s investment cash flows. Same currency is required; nested FoF is documented as unsupported.",
+      "unverified": "Current entitlement and exact aggregation display. Documented start/end-date assumptions should be separately fixture-tested.",
+      "sources": [
+        "F33"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP01",
+      "area": "Fund ERP",
+      "title": "Visual-accounting home and entity graph",
+      "entry": "Fund-administration homepage",
+      "controls": "Investment search, entity selection, connected fund/LP/GP records and workflow-focused views.",
+      "documented_behavior": "The tour positions investments left and funds centrally, with connected ownership interests. Selecting an entity reveals related economics; valuation/capital activity can be followed through the structure.",
+      "unverified": "Full current layout, zoom/selection mechanics, node types and navigation permissions. Written spatial descriptions are not screenshot verification.",
+      "sources": [
+        "T01"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP02",
+      "area": "Fund ERP",
+      "title": "Deal CRM records, relationships and pipeline",
+      "entry": "Deal CRM; email ingestion or company record",
+      "controls": "Spreadsheet-style records, Interactions, People, pipeline stages, assigned coverage, advisers and AI research/query surfaces.",
+      "documented_behavior": "The email agent extracts incoming deal context. Interaction feeds combine team emails, meetings and notes under firm access rules. Configurable enrichment and document-based briefs are described.",
+      "unverified": "Do not infer Kanban dragging, perfect AI extraction, automatic deduplication or deal-to-investment conversion.",
+      "sources": [
+        "T02",
+        "P08",
+        "R05"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP03",
+      "area": "Fund ERP",
+      "title": "LP CRM record and fundraising workspace",
+      "entry": "Investor record or Fundraising module",
+      "controls": "Relationship feed, commitments/performance, official communications, documents with engagement data, fundraising stages and closing initiation.",
+      "documented_behavior": "Fund admin supplies the economic record; IR works through the CRM. Subscription documents can be sent singly or in bulk, with closing status tracked.",
+      "unverified": "Exact stage configuration, automated transitions, pipeline layout and write access to economic fields.",
+      "sources": [
+        "T03",
+        "P09"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP04",
+      "area": "Fund ERP",
+      "title": "Closing command center and subscription review",
+      "entry": "Closing initiated from investor/fundraising context",
+      "controls": "Investor progress, questionnaire, tax uploads, subscription package, countersign and optional first capital call.",
+      "documented_behavior": "Documented progression is Invited → In progress → Signed → Countersigned. Existing LP data can prefill forms. Managers review the completed package before countersigning.",
+      "unverified": "Signer authority, rejected/reopened states, legal-document generation rules and premium conditional logic.",
+      "sources": [
+        "T04"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP05",
+      "area": "Fund ERP",
+      "title": "Capital-call creation and notices",
+      "entry": "Quick Actions → Call Capital → entity",
+      "controls": "Call type, amount, participants/parameters, health checks, per-LP amounts, wire confirmation and notice preview.",
+      "documented_behavior": "The general tour describes sending a call and creating a journal dated to its due date. An older PE tour describes GL reflection after funding; keep recognition and payment events separate until resolved.",
+      "unverified": "Exact LPA checks, approvals, cancellation/reissue rules, late payments and accounting timing discrepancy.",
+      "sources": [
+        "T05",
+        "T18"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP06",
+      "area": "Fund ERP",
+      "title": "LP-facing portal and GP disclosure controls",
+      "entry": "LP consolidated holdings → entity; GP investor policies",
+      "controls": "SOI/performance, notices, documents, capital accounts, transaction ledger and wire details, subject to policy.",
+      "documented_behavior": "A login can expose the LP’s commitments across GPs. GPs control tab visibility and financial disclosure by LP, including date cutoffs; newly closed LPs inherit the selected policy.",
+      "unverified": "All tab labels and layouts, role combinations, export permissions and cross-GP identity handling.",
+      "sources": [
+        "T06"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP07",
+      "area": "Fund ERP",
+      "title": "Fund Tax workspace",
+      "entry": "Year-end questionnaire → Tax Dashboard",
+      "controls": "Missing-data tasks, LP contact requests, return review, K-1 delivery, representative access and e-filing.",
+      "documented_behavior": "The tour includes AI preparation followed by a licensed CPA’s finalization, then client review/signing and filing status. Estimates and final tax documents are separate outputs.",
+      "unverified": "All exact status names, reject/amend flows, jurisdiction variants and approval permissions. Never treat the demo as a real filing service.",
+      "sources": [
+        "T07"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP08",
+      "area": "Fund ERP",
+      "title": "Data Collection configuration, submission and validation",
+      "entry": "Collection dashboard → company or request setup",
+      "controls": "Reporting period/currency, financials/KPIs/custom questions, contacts, cadence, reminders and upload links.",
+      "documented_behavior": "Uploaded financials undergo extraction and checks. Clicking an aggregate can trace contributing line items; confirmed values are saved with an audit trail into company financials/KPIs and downstream data tools.",
+      "unverified": "Extraction confidence rules, conflict resolution, attachment limits and handling of failed/late submissions.",
+      "sources": [
+        "T08"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP09",
+      "area": "Fund ERP",
+      "title": "Portfolio valuation workbench and posting",
+      "entry": "Company → new/copy/roll-forward valuation",
+      "controls": "As-of cap table, financial import, comparables, method weights, allocation analysis, report export and posting confirmation.",
+      "documented_behavior": "Methods include backsolve, post-money, public comparables, M&A and DCF. Results can be allocated through a capital structure. An explicit confirmation precedes posting into the investment schedule/ledger and related NAV updates.",
+      "unverified": "Exact method formulas, solver/discount settings, approvals and one garbled technical term in the transcript. Draft analysis is not posting.",
+      "sources": [
+        "T09"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP10",
+      "area": "Fund ERP",
+      "title": "Multi-entity waterfall analysis",
+      "entry": "Deal group → structure → Waterfall Modeling",
+      "controls": "Pan/zoom structure; exit value/date; Run; own-fund versus deal-level results; stakeholder filters; expandable paths; Breakpoints matrix.",
+      "documented_behavior": "Proceeds, MOIC and IRR can be examined by stakeholder and distribution tier. A changed exit value requires running the analysis again.",
+      "unverified": "All tier-editing controls, solver behavior, legal restrictions and save/export states. This does not initiate payments.",
+      "sources": [
+        "T10"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP11",
+      "area": "Fund ERP",
+      "title": "GP carry and vesting",
+      "entry": "Linked fund and GP entity; GP LLC interests",
+      "controls": "Carry-unit issuance, vesting schedules and member economics.",
+      "documented_behavior": "The tour links booked fund gains through the configured waterfall to vested member carry. Carry accrual or a valuation gain is not itself evidence that cash was paid.",
+      "unverified": "Forfeiture, termination, transfers, clawback, rounding and every date convention.",
+      "sources": [
+        "T11"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP12",
+      "area": "Fund ERP",
+      "title": "Distribution authorization and payment tracking",
+      "entry": "Fund Capital Activity → Request Distribution",
+      "controls": "Recipient authorization, bank-detail exceptions, consolidated transfer approval and investor-level tracking.",
+      "documented_behavior": "The documented flow includes Carta operations and an external bank approval. Individual net payments use confirmed LP instructions; missing details are flagged. Payment IDs and notifications support tracking.",
+      "unverified": "Precise payment-status vocabulary, reversal/error behavior and real integration permissions. A recreation must clearly simulate any disconnected payment action.",
+      "sources": [
+        "T12"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP13",
+      "area": "Fund ERP",
+      "title": "Management-company accounting",
+      "entry": "ManCo expense, balance and reporting views",
+      "controls": "Expense allocations, intercompany balances, bulk settlement, subaccounts, reporting tags and journal drill-down.",
+      "documented_behavior": "Allocated spend generates intercompany accounting. The tour also describes budgeting/scenario work in Claude for Excel; that is an external integration, not proof of an identical native Carta budget editor.",
+      "unverified": "Every approval state, allocation rule and settlement screen.",
+      "sources": [
+        "T13"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP14",
+      "area": "Fund ERP",
+      "title": "Ramp expense integration",
+      "entry": "Linked Ramp spend → Carta general ledger",
+      "controls": "Category/account mappings, expense splits, reporting tags and attached evidence.",
+      "documented_behavior": "Cards, bills and reimbursements can flow into accounting. Multi-entity splits create intercompany entries; invoices/receipts accompany the records.",
+      "unverified": "Exact setup UI, sync exceptions, permissions and transaction-conflict resolution. Do not replace actual Ramp screens with an invented native workflow.",
+      "sources": [
+        "T14"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP15",
+      "area": "Fund ERP",
+      "title": "Auditor workspace",
+      "entry": "Reports and Documents → Audit → entity/year",
+      "controls": "Audit-area categories, supporting documents, grouped downloads and confirmation requests.",
+      "documented_behavior": "Accounting, investment and tax evidence is assembled from connected records; the tour includes direct audit confirmations to portfolio companies and monitoring for missing documents.",
+      "unverified": "Auditor-specific permission granularity and all document-refresh/error states.",
+      "sources": [
+        "T15"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP16",
+      "area": "Fund ERP",
+      "title": "KYC and ongoing diligence",
+      "entry": "KYC dashboard → investor → request or result",
+      "controls": "Verification status, secure document requests, watch-list results, review flags/history and CDD report.",
+      "documented_behavior": "The tour describes identity and screening workflows with compliance review. A flag requires investigation; it is not an automatic conclusion about the investor.",
+      "unverified": "Risk scoring, screening vendors, disposition rules, escalation and jurisdictional policy. A prototype must not claim actual verification.",
+      "sources": [
+        "T16"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP17",
+      "area": "Fund ERP",
+      "title": "Data Explorer and warehouse-backed analysis",
+      "entry": "Curated collections → dashboard/table or new query",
+      "controls": "Entity filters, starting table, filters/aggregation, chart type, saved/shared queries and AI query assistance.",
+      "documented_behavior": "The tour connects accounting/ownership data to analytical views. Developer documentation identifies periodic refreshes, so a data-warehouse dashboard must not imply every record is instantaneously current.",
+      "unverified": "Exact present-day product naming, SQL/semantic-layer rules, entitlements and permissions on sharing.",
+      "sources": [
+        "T17",
+        "D01",
+        "R04"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP18",
+      "area": "Fund ERP",
+      "title": "SPV formation and ongoing administration",
+      "entry": "SPV guided formation and close",
+      "controls": "Formation/legal/banking steps, investor subscriptions, capital activity, reporting and tax-service coordination.",
+      "documented_behavior": "Formation involves real services and legal entities. The subsequent SPV uses administrative workflows such as closings and the LP portal; this is not the forecasting model’s no-construction switch.",
+      "unverified": "Full formation wizard, legal templates, region-specific sequence, service pricing and activation states.",
+      "sources": [
+        "P05"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP19",
+      "area": "Fund ERP",
+      "title": "Allocator-facing LP Portfolio Analytics",
+      "entry": "LP analytics document/data workspace",
+      "controls": "Document intake, extraction/validation, traceable data and portfolio dashboards.",
+      "documented_behavior": "This serves an allocator evaluating alternative assets across managers: concentration, allocation-policy deviation and cohort comparisons. It is distinct from an individual GP’s LP Portal or fundraising CRM.",
+      "unverified": "Detailed screens, intake queues, remediation dialogs, metric look-through logic and portfolio-aggregation rules.",
+      "sources": [
+        "P06"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    },
+    {
+      "id": "ERP20",
+      "area": "Fund ERP",
+      "title": "Loan Operations and borrower/co-lender access",
+      "entry": "Loan setup, reconciliation, covenant and reporting workspaces",
+      "controls": "Loan terms/draws, rates/PIK, repayments, invoices, payment reconciliation, covenant documents and reports.",
+      "documented_behavior": "Loan activity connects to accounting. Borrowers/co-lenders have separate document/data access. The product supports standalone use, but connected functionality depends on setup.",
+      "unverified": "Actual wizard/screens, interest/day-count calculations, amendments, allocation rules and full role matrix.",
+      "sources": [
+        "P07"
+      ],
+      "evidence": "D",
+      "visual_verified": false,
+      "live_interaction_verified": false
+    }
+  ],
+  "workflows": [
+    {
+      "id": "WF01",
+      "title": "Create and construct a fund",
+      "sequence": "FF01 → FF02 → FF03–FF09 → FF10",
+      "contract": "Persist economic configuration and present computed output; do not invent unobserved template defaults.",
+      "sources": [
+        "F01",
+        "F02",
+        "F10"
+      ]
+    },
+    {
+      "id": "WF02",
+      "title": "Maintain a portfolio investment",
+      "sequence": "FF12 → FF14 → FF16 → FF15 → save investment → FF12/FF10",
+      "contract": "Nested event editing must affect the correct case and only persist through the documented parent save.",
+      "sources": [
+        "F15",
+        "F16",
+        "F17"
+      ]
+    },
+    {
+      "id": "WF03",
+      "title": "Compare a fund scenario",
+      "sequence": "FF17 → edit assumptions → recalculate → compare → save scenario",
+      "contract": "Scenario changes remain distinguishable from base records and official accounting; applying-to-base remains unverified.",
+      "sources": [
+        "F18"
+      ]
+    },
+    {
+      "id": "WF04",
+      "title": "Review a historical period",
+      "sequence": "FF12 → FF18 → chosen month → reset to today",
+      "contract": "Historical analysis changes the displayed time context, not the underlying stored history.",
+      "sources": [
+        "F19"
+      ]
+    },
+    {
+      "id": "WF05",
+      "title": "Collect company KPIs",
+      "sequence": "FF19 → FF20 → recipient submission → review or configured auto-approval",
+      "contract": "Accepted values and pending submissions are separate states.",
+      "sources": [
+        "F20"
+      ]
+    },
+    {
+      "id": "WF06",
+      "title": "Progress an LP to a closed commitment",
+      "sequence": "ERP03 → ERP04 → countersign → optional capital call → ERP06",
+      "contract": "Carry investor context into administrative records while respecting disclosure policy.",
+      "sources": [
+        "T03",
+        "T04",
+        "T06"
+      ]
+    },
+    {
+      "id": "WF07",
+      "title": "Issue a capital call",
+      "sequence": "ERP05 → configure → checks → amounts/wires → preview → submit → track funding",
+      "contract": "Notice issuance, due-date recognition and cash receipt require distinct events; exact Carta journal timing is unresolved across sources.",
+      "sources": [
+        "T05",
+        "T18"
+      ]
+    },
+    {
+      "id": "WF08",
+      "title": "Collect data and post a valuation",
+      "sequence": "ERP08 → validate/save → ERP09 draft valuation → review allocation → confirm posting",
+      "contract": "Only the explicit accounting action should affect booked investment values.",
+      "sources": [
+        "T08",
+        "T09"
+      ]
+    },
+    {
+      "id": "WF09",
+      "title": "Model exit proceeds",
+      "sequence": "ERP10 → exit value/date → run → stakeholders/breakpoints → rerun",
+      "contract": "This is analytical modeling, not ERP12 payment authorization.",
+      "sources": [
+        "T10",
+        "T12"
+      ]
+    },
+    {
+      "id": "WF10",
+      "title": "Execute a simulated distribution workflow",
+      "sequence": "ERP12 → recipients → banking exceptions → external approval → status tracking",
+      "contract": "In a disconnected recreation, outputs must remain clearly labeled simulation.",
+      "sources": [
+        "T12"
+      ]
+    },
+    {
+      "id": "WF11",
+      "title": "Complete tax workflow",
+      "sequence": "ERP07 → missing-data collection → preparation/review → client signoff → delivery/filing status",
+      "contract": "Preserve the professional review and external filing boundary rather than fabricating a valid filing.",
+      "sources": [
+        "T07"
+      ]
+    },
+    {
+      "id": "WF12",
+      "title": "Aggregate modeled funds",
+      "sequence": "FF26 for an analytical group; FF33 for ownership in a portfolio fund",
+      "contract": "These are different operations: a view is not an investment, and the latter carries cash flows.",
+      "sources": [
+        "F26",
+        "F33"
+      ]
+    }
+  ],
+  "conceptual_data_model": [
+    {
+      "object": "Firm / legal entity / user grant",
+      "description": "Firm owns scoped entities; grants limit user and module access.",
+      "evidence": "I — conceptual modeling",
+      "sources": [
+        "T01",
+        "T06",
+        "F25"
+      ]
+    },
+    {
+      "object": "Company / security / investment / event",
+      "description": "A company can have financing history; a fund investment has its own owned position and dated events.",
+      "evidence": "I — relationships grounded in documents, not private schema",
+      "sources": [
+        "F15",
+        "F16",
+        "I01"
+      ]
+    },
+    {
+      "object": "Fund configuration / allocation / sector profile",
+      "description": "Construction assumptions are versionable model inputs, separate from real transactions.",
+      "evidence": "I — proposed implementation structure",
+      "sources": [
+        "F02",
+        "F04",
+        "F05"
+      ]
+    },
+    {
+      "object": "Investment case / fund scenario",
+      "description": "Case holds an investment’s alternative path; scenario changes selected assumptions across a fund.",
+      "evidence": "I — separate objects recommended",
+      "sources": [
+        "F17",
+        "F18"
+      ]
+    },
+    {
+      "object": "Investor / commitment / closing package / disclosure policy",
+      "description": "One investor may hold interests in several funds and see a policy-filtered subset of records.",
+      "evidence": "I — linked record design",
+      "sources": [
+        "T03",
+        "T04",
+        "T06"
+      ]
+    },
+    {
+      "object": "Capital activity / investor allocation / journal entry",
+      "description": "Carta’s public warehouse update documents fund-level activity, LP-level breakdowns and accounting links.",
+      "evidence": "D — public analytical data relationships, not transactional database schema",
+      "sources": [
+        "R04"
+      ]
+    },
+    {
+      "object": "Metric definition / period value / submission / source",
+      "description": "Keep pending submissions separate from accepted values and their provenance.",
+      "evidence": "I — proposed design of documented workflow",
+      "sources": [
+        "F20",
+        "T08",
+        "I03"
+      ]
+    },
+    {
+      "object": "Valuation draft / posted valuation / accounting effect",
+      "description": "Separate an analysis artifact from the accounting transaction it may produce.",
+      "evidence": "I — proposed design grounded in explicit posting step",
+      "sources": [
+        "T09"
+      ]
+    },
+    {
+      "object": "Payment instruction / authorization / transfer status",
+      "description": "Store simulated payment progress independently from forecasted distributions.",
+      "evidence": "I — proposed implementation boundary",
+      "sources": [
+        "T12"
+      ]
+    },
+    {
+      "object": "Document / access grant / extraction / review record",
+      "description": "Associate evidence with records; do not assume every document is visible to every user.",
+      "evidence": "I — proposed design",
+      "sources": [
+        "T06",
+        "T08",
+        "T15"
+      ]
+    },
+    {
+      "object": "Data snapshot / refreshed-at timestamp",
+      "description": "Analytical results should disclose source freshness and avoid masquerading as current transactional state.",
+      "evidence": "I — application recommendation; cadence itself is documented",
+      "sources": [
+        "D01"
+      ]
+    }
+  ],
+  "acceptance_contracts": [
+    {
+      "id": "AC01",
+      "title": "Stage-probability guard",
+      "fixture": "Enter graduation 60% and exit 50% at one stage.",
+      "expected": "Reject the invalid combination; do not create a negative failure probability.",
+      "basis": "D — documented constraint",
+      "sources": [
+        "F04"
+      ]
+    },
+    {
+      "id": "AC02",
+      "title": "Terminal stage",
+      "fixture": "Enter a nonzero graduation probability in the last stage.",
+      "expected": "Require a terminal stage with no further graduation.",
+      "basis": "D",
+      "sources": [
+        "F04"
+      ]
+    },
+    {
+      "id": "AC03",
+      "title": "Residual failure",
+      "fixture": "Use graduation 60%, exit 15%.",
+      "expected": "Computed failure is 25%, before any display rounding.",
+      "basis": "D + synthetic arithmetic fixture",
+      "sources": [
+        "F04"
+      ]
+    },
+    {
+      "id": "AC04",
+      "title": "Construction versus actuals",
+      "fixture": "Add an actual investment to a fund that already has a construction plan.",
+      "expected": "Current Forecast reflects actual deployment; Construction Forecast remains an inception model.",
+      "basis": "D",
+      "sources": [
+        "F10"
+      ]
+    },
+    {
+      "id": "AC05",
+      "title": "Actual cash-flow override",
+      "fixture": "Override one monthly expense in the actuals editor.",
+      "expected": "Actual reporting changes; the override alone does not replan projected investment count.",
+      "basis": "D",
+      "sources": [
+        "F11"
+      ]
+    },
+    {
+      "id": "AC06",
+      "title": "Nested save",
+      "fixture": "Edit a round, close its editor, then save the investment.",
+      "expected": "Verify the saved parent contains the edited event after reload. Behavior before parent save must be captured, not guessed.",
+      "basis": "D with reload test proposed",
+      "sources": [
+        "F16"
+      ]
+    },
+    {
+      "id": "AC07",
+      "title": "Scenario isolation",
+      "fixture": "Change exit assumptions inside a named scenario.",
+      "expected": "Base accounting must not change; recalculate and save actions have distinct, inspectable outcomes.",
+      "basis": "D for scenario actions; I for implementation isolation contract",
+      "sources": [
+        "F18",
+        "T09"
+      ]
+    },
+    {
+      "id": "AC08",
+      "title": "Historical mode",
+      "fixture": "Choose a historical month, then select Reset to today.",
+      "expected": "Metrics use each selected time context; historical records are not overwritten.",
+      "basis": "D",
+      "sources": [
+        "F19"
+      ]
+    },
+    {
+      "id": "AC09",
+      "title": "Pending KPI submission",
+      "fixture": "Submit a new KPI while automatic approval is off.",
+      "expected": "A pending review is distinct from the accepted metric; accept and reject produce different stored states.",
+      "basis": "D",
+      "sources": [
+        "F20"
+      ]
+    },
+    {
+      "id": "AC10",
+      "title": "KPI auto-approval branch",
+      "fixture": "Enable Auto-Approve and submit a valid update.",
+      "expected": "Follow the auto-approval branch rather than force a manual-review-only workflow.",
+      "basis": "D",
+      "sources": [
+        "F20"
+      ]
+    },
+    {
+      "id": "AC11",
+      "title": "Scoped published reader",
+      "fixture": "Open an LP-specific published dashboard.",
+      "expected": "Reader is non-editable and cannot access other LP returns through exports or direct data requests.",
+      "basis": "D disclosure; I server-side enforcement requirement",
+      "sources": [
+        "F24"
+      ]
+    },
+    {
+      "id": "AC12",
+      "title": "LP portal cutoff",
+      "fixture": "Set one LP to a historical disclosure cutoff.",
+      "expected": "Portal data respects both entity/tab visibility and the financial date policy.",
+      "basis": "D",
+      "sources": [
+        "T06"
+      ]
+    },
+    {
+      "id": "AC13",
+      "title": "Valuation draft versus posting",
+      "fixture": "Change a draft valuation and compare booked balances, then post it.",
+      "expected": "Only the documented posting step triggers booked valuation effects.",
+      "basis": "D workflow; I fixture separation",
+      "sources": [
+        "T09"
+      ]
+    },
+    {
+      "id": "AC14",
+      "title": "External payment boundary",
+      "fixture": "Create a distribution with missing recipient bank details.",
+      "expected": "Show the missing-information branch; never report a real transfer in a disconnected environment.",
+      "basis": "D exception; I simulation contract",
+      "sources": [
+        "T12"
+      ]
+    },
+    {
+      "id": "AC15",
+      "title": "Warehouse freshness",
+      "fixture": "Display a warehouse-derived value whose snapshot timestamp is older than the current record.",
+      "expected": "Expose the snapshot timestamp; do not label the figure as instant live accounting.",
+      "basis": "D cadence; I presentation contract",
+      "sources": [
+        "D01"
+      ]
+    },
+    {
+      "id": "AC16",
+      "title": "Matched-basis performance multiples",
+      "fixture": "Synthetic LP fixture: paid in 10, distributions 3, residual value 12; all on the same basis.",
+      "expected": "DPI 0.3x; RVPI 1.2x; TVPI 1.5x. These are not observed Carta demo outputs.",
+      "basis": "D definitions + synthetic arithmetic",
+      "sources": [
+        "M01",
+        "M02"
+      ]
+    },
+    {
+      "id": "AC17",
+      "title": "Undefined ratios",
+      "fixture": "Set paid-in capital to zero.",
+      "expected": "Show an explicitly unavailable result rather than Infinity or an invented zero.",
+      "basis": "I — recommended numeric safeguard; Carta presentation not verified",
+      "sources": [
+        "M01"
+      ]
+    },
+    {
+      "id": "AC18",
+      "title": "IRR input quality",
+      "fixture": "Use only negative cash flows or an ambiguous sequence with multiple sign changes.",
+      "expected": "Surface invalid/ambiguous calculation status rather than fabricate a return. Solver conventions must be specified separately.",
+      "basis": "I — recommended numerical safeguard",
+      "sources": []
+    },
+    {
+      "id": "AC19",
+      "title": "Currency eligibility",
+      "fixture": "Create a multi-fund view from vehicles with different fund currencies.",
+      "expected": "Do not silently pool the values; the documented feature requires a common currency.",
+      "basis": "D",
+      "sources": [
+        "F26"
+      ]
+    },
+    {
+      "id": "AC20",
+      "title": "FoF versus grouped view",
+      "fixture": "Compare adding a portfolio-fund investment to adding a fund to a grouped analytical view.",
+      "expected": "Only the investment creates linked investment cash flows.",
+      "basis": "D",
+      "sources": [
+        "F26",
+        "F33"
+      ]
+    },
+    {
+      "id": "AC21",
+      "title": "SAFE conversion",
+      "fixture": "Model an unconverted instrument, then provide a priced-round conversion outcome.",
+      "expected": "Apply the modeled/supplied ownership update; do not treat cap value as fully verified ownership.",
+      "basis": "D",
+      "sources": [
+        "F31"
+      ]
+    },
+    {
+      "id": "AC22",
+      "title": "Relative formula period",
+      "fixture": "Rerun a saved formula using a relative prior-year KPI period at a later date.",
+      "expected": "Resolve the new relative date instead of freezing the original period.",
+      "basis": "D",
+      "sources": [
+        "F21"
+      ]
+    },
+    {
+      "id": "AC23",
+      "title": "Import provenance",
+      "fixture": "Retain one local forecast event while accepting a selected imported event.",
+      "expected": "Both selected outcomes remain traceable; do not blindly replace all local history.",
+      "basis": "D",
+      "sources": [
+        "R01"
+      ]
+    },
+    {
+      "id": "AC24",
+      "title": "Concurrent writes",
+      "fixture": "Have two authorized editors change the same saved model.",
+      "expected": "The guide describes last-save-wins. A safer prototype lock/conflict warning is a deliberate deviation, not claimed parity.",
+      "basis": "D documented limitation; I safer alternative",
+      "sources": [
+        "F29"
+      ]
+    },
+    {
+      "id": "AC25",
+      "title": "Connected-record integrity",
+      "fixture": "Rename an investor or company in a synthetic connected record.",
+      "expected": "Relevant views use stable IDs, not copied names as identity keys.",
+      "basis": "I — recommended implementation integrity test",
+      "sources": []
+    },
+    {
+      "id": "AC26",
+      "title": "Functional controls",
+      "fixture": "Exercise each visible primary action in the recreation.",
+      "expected": "It changes state, opens a real destination, produces an output, or clearly explains an unavailable dependency; no decorative dead buttons.",
+      "basis": "I — implementation acceptance requirement",
+      "sources": []
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G01",
+      "priority": "Critical for visual parity",
+      "topic": "Authenticated screen coverage",
+      "known_limit": "No complete current authenticated route/screen capture was achieved.",
+      "evidence_needed": "Capture each target route at fixed desktop dimensions, with current role/entitlement and an as-of date. Do not invent exact menu order."
+    },
+    {
+      "id": "G02",
+      "priority": "Critical for visual parity",
+      "topic": "Screenshots and video frames",
+      "known_limit": "Most embedded images/video players failed in available tools; a title card or thumbnail is not a verified screen.",
+      "evidence_needed": "Obtain official downloadable frames or a working authorized browser session. Record viewport, state and source per frame."
+    },
+    {
+      "id": "G03",
+      "priority": "Critical for behavior parity",
+      "topic": "Chart interactions and actual outputs",
+      "known_limit": "The guides identify analytics, but not complete tooltip/legend/drilldown behavior or outputs for a common fixture.",
+      "evidence_needed": "Run one synthetic dataset through the actual product; capture chart states and underlying output tables."
+    },
+    {
+      "id": "G04",
+      "priority": "Critical for financial fidelity",
+      "topic": "Metrics text inconsistency",
+      "known_limit": "The retrieved Forecasting metrics article contains suspect minus operators; Carta’s educational definitions imply addition for TVPI.",
+      "evidence_needed": "Use consistent-basis formulas as cross-checks, but verify product-specific fees, debt, cash, timing and gross/net conventions before claiming exact parity."
+    },
+    {
+      "id": "G05",
+      "priority": "Critical for financial fidelity",
+      "topic": "Capital-call recognition timing",
+      "known_limit": "General and PE-specific tours describe different GL timing.",
+      "evidence_needed": "Confirm notice/receivable recognition and funded-cash entries separately. Do not silently choose a transcript."
+    },
+    {
+      "id": "G06",
+      "priority": "Critical for financial fidelity",
+      "topic": "Preference/waterfall semantics",
+      "known_limit": "Clawback wording and one investment preference label-description pairing are ambiguous.",
+      "evidence_needed": "Verify original UI and documented legal/economic ordering; test capped/participating and catch-up cases independently."
+    },
+    {
+      "id": "G07",
+      "priority": "High",
+      "topic": "Integration permissions and conflicts",
+      "known_limit": "Overview pages expose branch labels without all detailed substeps.",
+      "evidence_needed": "Inspect source/target roles, selected imports, overwrites, retry failures, revocation and re-sync behavior."
+    },
+    {
+      "id": "G08",
+      "priority": "High",
+      "topic": "Persist/cancel/delete/import edge states",
+      "known_limit": "Not every module documents drafts, undo, deletes, validation messages, duplicate prevention or import templates.",
+      "evidence_needed": "Capture empty, dirty, invalid, saving, success, failure and permission-denied states for each implemented flow."
+    },
+    {
+      "id": "G09",
+      "priority": "High",
+      "topic": "Current packaging and regional variants",
+      "known_limit": "US/regional pages and older support plans differ. Some announced capabilities are explicitly future-looking.",
+      "evidence_needed": "Pin an actual target account/package/version. Do not merge all public features into a purported universal Carta menu."
+    },
+    {
+      "id": "G10",
+      "priority": "High",
+      "topic": "Permission matrix",
+      "known_limit": "Read/write controls, LP disclosure and external-user roles are documented, but not a complete cross-product matrix.",
+      "evidence_needed": "Verify each persona against each entity/action/export/API path."
+    },
+    {
+      "id": "G11",
+      "priority": "High",
+      "topic": "Published snapshot semantics",
+      "known_limit": "Read-only publishing is documented; exact freshness, revoke/expire behavior is not.",
+      "evidence_needed": "Compare a published link before/after edits and after access changes."
+    },
+    {
+      "id": "G12",
+      "priority": "High",
+      "topic": "Advanced Forecasting breadth",
+      "known_limit": "FoF/SAFE/preferences are documented; cap-table calculator internals, backsolve, secondary optimization, credit-line edge cases and every API are not exhaustively specified here.",
+      "evidence_needed": "Expand those individual features only when they enter the intended build scope; do not label index-only features implemented."
+    },
+    {
+      "id": "G13",
+      "priority": "High",
+      "topic": "LP Portfolio Analytics and Loan Operations screens",
+      "known_limit": "Public feature behavior is clearer than complete screen sequence or calculation detail.",
+      "evidence_needed": "Obtain module-specific tours/captures, not screenshots borrowed from Forecasting or fund admin."
+    },
+    {
+      "id": "G14",
+      "priority": "Medium",
+      "topic": "Data dictionary completeness",
+      "known_limit": "Domain/table index is visible, but the full column dictionary fetch timed out.",
+      "evidence_needed": "Treat the proposed application model as inferred; do not claim actual transactional database compatibility."
+    },
+    {
+      "id": "G15",
+      "priority": "Medium",
+      "topic": "External integrations and service execution",
+      "known_limit": "Tax filing, compliance checks, entity formation, Ramp and banking involve systems outside a local app.",
+      "evidence_needed": "Use clearly labeled simulations unless authorized production integrations and professional service processes are actually provided."
+    },
+    {
+      "id": "G16",
+      "priority": "Medium",
+      "topic": "Limits and concurrent editing",
+      "known_limit": "Legacy limits and last-save-wins behavior are documented but not reconfirmed for the intended current account.",
+      "evidence_needed": "Keep limits configurable and mark any intentionally improved collaboration behavior as a deviation."
+    }
+  ],
+  "sources": [
+    {
+      "id": "P01",
+      "title": "Carta Fund ERP",
+      "url": "https://carta.com/erp/",
+      "kind": "Product page",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; current authenticated UI not inspected."
+    },
+    {
+      "id": "P02",
+      "title": "Fund Forecasting — US product page",
+      "url": "https://carta.com/fund-management/fund-forecasting/",
+      "kind": "Product page",
+      "evidence": "D",
+      "inspection": "Current public positioning reviewed; packaging differs across regional pages."
+    },
+    {
+      "id": "P03",
+      "title": "Fund Forecasting collection",
+      "url": "https://carta.com/learn/collections/fund-forecasting/",
+      "kind": "Resource index",
+      "evidence": "D",
+      "inspection": "Collection reviewed. Its linked public demo did not render in the available tools."
+    },
+    {
+      "id": "P04",
+      "title": "Fund Forecasting support index",
+      "url": "https://support.carta.com/kb/en/fund-forecasting-support-documents-454012",
+      "kind": "Support index",
+      "evidence": "D",
+      "inspection": "Used to discover individual guides; index entries alone are not proof of detailed behavior."
+    },
+    {
+      "id": "F01",
+      "title": "Getting started",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-getting-started-qCMLkFOCXy/Steps/4213414",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F02",
+      "title": "Construction Wizard",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-construction-wizard-tJgZSMGW3r/Steps/4213399",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F03",
+      "title": "General fund settings",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-general-tOsHkbGquN/Steps/4213421",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F04",
+      "title": "Sector profiles",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-sector-profiles-TBstj7GKWa/Steps/4213434",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F05",
+      "title": "Allocations",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-allocations-zUcVV9XXCq/Steps/4213413",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F06",
+      "title": "Fees and expenses",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-fees-expenses-z16waLoaSB/Steps/4213417",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F07",
+      "title": "Exit recycling",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-exit-recycling-4DzfHQFNrN/Steps/4213404",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F08",
+      "title": "Forecasting waterfall",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-waterfall-jhBeHU857C/Steps/4213390",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Guide reviewed; clawback wording is ambiguous and must not be translated directly into a legal/economic algorithm."
+    },
+    {
+      "id": "F09",
+      "title": "Limited partners in the forecasting model",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-limited-partners-NFgjB6GXVs/Steps/4213383",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F10",
+      "title": "Construction versus Current Forecast",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-construction-vs-aEQaVHfsO9/Steps/4213429",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F11",
+      "title": "Updating model for actuals",
+      "url": "https://support.carta.com/kb/guide/en/advanced-updating-model-for-actuals-7ShL2Az1wl/Steps/4213454",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F12",
+      "title": "Investments table",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-investments-table-gtxD7hR0UN/Steps/4213403",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F13",
+      "title": "Investment reporting metrics",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-investment-reporting-metrics-5DkYsurS7J/Steps/4213386",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F14",
+      "title": "Custom views",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-custom-views-EGSA0LWVuS/Steps/4213415",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F15",
+      "title": "Adding investments",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-adding-investments-B1t9fDAxPr/Steps/4213448",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F16",
+      "title": "Managing rounds and investment events",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-managing-rounds-MvAm83Ubaw/Steps/4213443",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F17",
+      "title": "Performance cases",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-performance-cases-pruXD78PY3/Steps/4213388",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F18",
+      "title": "Scenario Builder",
+      "url": "https://support.carta.com/kb/guide/en/advanced-scenario-builder-4woB6taecl/Steps/4213440",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F19",
+      "title": "Time Machine",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-time-machine-PTNfjk6HiS/Steps/4213447",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Full written guide retrieved through Exa after direct fetch failed. No live interaction test."
+    },
+    {
+      "id": "F20",
+      "title": "KPI Manager",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-kpi-manager-tUkUx40xby/Steps/4213428",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F21",
+      "title": "Custom formulas",
+      "url": "https://support.carta.com/kb/guide/en/advanced-custom-formulas-t78blq3KBW/Steps/4213444",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F22",
+      "title": "Optimal reserves ranking",
+      "url": "https://support.carta.com/kb/guide/en/insights-optimal-reserves-ranking-ATrWfgRH2I/Steps/4213391",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F23",
+      "title": "Document Center",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-document-center-QAkdo5MZa1/Steps/4213431",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F24",
+      "title": "Publishing",
+      "url": "https://support.carta.com/kb/guide/en/sharing-and-administration-publishing-oU0ztW32Ln/Steps/4213425",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F25",
+      "title": "Collaborators",
+      "url": "https://support.carta.com/kb/guide/en/sharing-and-administration-collaborators-UpQrFEjF3X/Steps/4213446",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F26",
+      "title": "Multi-fund views",
+      "url": "https://support.carta.com/kb/guide/en/advanced-multi-fund-views-RJu7EGdivt/Steps/4213401",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Full written guide retrieved through Exa; legacy plan terminology may not match current commercial packaging."
+    },
+    {
+      "id": "F27",
+      "title": "Multiple currencies",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-multiple-currencies-bUCCkWkbwW/Steps/4213411",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F28",
+      "title": "Construction methodology",
+      "url": "https://support.carta.com/kb/guide/en/advanced-construction-methodology-xD9w0H32dm/Steps/4213419",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F29",
+      "title": "Technical limitations",
+      "url": "https://support.carta.com/kb/guide/en/technical-technical-limitations-UHVWEBoKCr/Steps/4213430",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Documented limits and last-save-wins behavior reviewed; not confirmed against a current paid account."
+    },
+    {
+      "id": "F30",
+      "title": "How Tactyc metrics are calculated",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-how-are-tactyc-metrics-calculated-1rj6lCCSEf/Steps/4213433",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Retrieved formula text contains suspect minus signs. Treat this rendering as ambiguous, not an executable formula specification."
+    },
+    {
+      "id": "F31",
+      "title": "SAFEs and convertible notes",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-safes-and-notes-8Ek0gswYB1/Steps/4213398",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F32",
+      "title": "Investment liquidation preferences",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-management-liquidation-preferences-MMuhWJuNWf/Steps/4213422",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Read guide. One senior/junior label-description pairing is internally inconsistent; ordering requires confirmation."
+    },
+    {
+      "id": "F33",
+      "title": "Fund of Funds",
+      "url": "https://support.carta.com/kb/guide/en/advanced-fund-of-funds-yxYou2TLiO/Steps/4213445",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "F34",
+      "title": "Adjusting pacing",
+      "url": "https://support.carta.com/kb/guide/en/portfolio-construction-adjusting-pacing-8zxDjxPR1o/Steps/4213452",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; embedded UI images not verified."
+    },
+    {
+      "id": "I01",
+      "title": "Investments integration",
+      "url": "https://support.carta.com/kb/guide/en/how-to-use-carta-fund-forecastings-investments-integration-vZn47rttbr/Steps/4190091",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Overview and branch labels read. Required-permission and setup substeps were not fully exposed by the page extraction."
+    },
+    {
+      "id": "I02",
+      "title": "Fund-admin financials integration",
+      "url": "https://support.carta.com/kb/guide/en/how-to-use-the-carta-financials-and-fund-forecasting-fa-integration-with-carta-NjHjsFUP8d/Steps/4394364",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Overview read; nested permissions/setup/review branches were not fully exposed."
+    },
+    {
+      "id": "I03",
+      "title": "Company-financials integration",
+      "url": "https://support.carta.com/kb/guide/en/how-to-use-the-carta-financials-and-fund-forecasting-integration-MBypltXles/Steps/4682740",
+      "kind": "Support guide",
+      "evidence": "D",
+      "inspection": "Overview read. Carta RFI/Data Collection is designated source of truth for synced company financials."
+    },
+    {
+      "id": "R01",
+      "title": "Enhancements to the investments integration",
+      "url": "https://releasenotes.carta.com/enhancements-to-the-carta-fund-forecasting-investments-integration-417dqE",
+      "kind": "Release note",
+      "evidence": "D",
+      "inspection": "Keep/select import behavior and source labels reviewed; a coming-soon non-Carta-data statement is not treated as launched."
+    },
+    {
+      "id": "R02",
+      "title": "Fund Forecasting company data sync",
+      "url": "https://carta.com/product-updates/fund-forecasting-data-sync/",
+      "kind": "Product update",
+      "evidence": "D",
+      "inspection": "29 October 2025 update reviewed; depends on both Data Collection and Forecasting."
+    },
+    {
+      "id": "R03",
+      "title": "General-ledger data and Fund Forecasting",
+      "url": "https://carta.com/product-updates/gl-data-fund-forecasting-integration/",
+      "kind": "Product update",
+      "evidence": "D",
+      "inspection": "Reviewed published description of fund actuals and review workflow; exact field-level conflict resolution remains unverified."
+    },
+    {
+      "id": "R04",
+      "title": "Capital activity queries in Data Warehouse",
+      "url": "https://carta.com/product-updates/query-capital-activity-data-warehouse/",
+      "kind": "Product update",
+      "evidence": "D",
+      "inspection": "5 June 2026 update: fund events, investor-level breakdowns, and linked journal entries."
+    },
+    {
+      "id": "R05",
+      "title": "Document queries in Carta CRM",
+      "url": "https://carta.com/uk/en/product-updates/query-documents-carta-crm/",
+      "kind": "Regional product update",
+      "evidence": "D",
+      "inspection": "5 June 2026 update: document-aware CRM queries with source references. Not proof of accuracy in every answer."
+    },
+    {
+      "id": "T01",
+      "title": "Visual accounting homepage",
+      "url": "https://carta.com/explore/fund-erp/carta-homepage/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T02",
+      "title": "Deal CRM",
+      "url": "https://carta.com/explore/fund-erp/deal-crm/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T03",
+      "title": "LP CRM",
+      "url": "https://carta.com/explore/fund-erp/lp-crm/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T04",
+      "title": "Closings",
+      "url": "https://carta.com/explore/fund-erp/closings/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T05",
+      "title": "Capital calls",
+      "url": "https://carta.com/explore/fund-erp/capital-calls/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T06",
+      "title": "LP Portal",
+      "url": "https://carta.com/explore/fund-erp/lp-portal/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T07",
+      "title": "Fund Tax",
+      "url": "https://carta.com/explore/fund-erp/fund-tax/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T08",
+      "title": "Data Collection",
+      "url": "https://carta.com/explore/fund-erp/data-collection/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T09",
+      "title": "Portfolio Valuations",
+      "url": "https://carta.com/explore/fund-erp/portfolio-valuations/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T10",
+      "title": "Waterfall Modeling",
+      "url": "https://carta.com/explore/fund-erp/waterfall-modeling-web-experience/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T11",
+      "title": "GP Carry Tracking",
+      "url": "https://carta.com/explore/fund-erp/gp-carry-tracking/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T12",
+      "title": "Automated Money Movement",
+      "url": "https://carta.com/explore/fund-erp/automated-money-movement/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T13",
+      "title": "Management Company Administration",
+      "url": "https://carta.com/explore/fund-erp/manco-administration/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T14",
+      "title": "Integrated expense management with Ramp",
+      "url": "https://carta.com/explore/fund-erp/integrated-expense-management-ramp/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Written tour transcript reviewed. Video playback and individual video frames were not verified."
+    },
+    {
+      "id": "T15",
+      "title": "Auditor Portal — private-equity tour",
+      "url": "https://carta.com/explore-erp/private-equity/auditor-portal/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Full written transcript reviewed through Exa; video frames not inspected."
+    },
+    {
+      "id": "T16",
+      "title": "KYC Dashboard — private-equity tour",
+      "url": "https://carta.com/explore-erp/private-equity/kyc-dashboard/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Full written transcript reviewed through Exa; video frames not inspected."
+    },
+    {
+      "id": "T17",
+      "title": "Data Explorer — private-equity tour",
+      "url": "https://carta.com/explore-erp/private-equity/data-explorer/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Full written transcript reviewed; older navigation may differ from current Data Warehouse packaging."
+    },
+    {
+      "id": "T18",
+      "title": "Capital calls — private-equity tour",
+      "url": "https://carta.com/explore-erp/private-equity/capital-calls/",
+      "kind": "Official product-tour transcript",
+      "evidence": "D",
+      "inspection": "Describes GL recognition after full funding; newer general tour describes posting when sent, dated due date. Difference retained as an unresolved issue."
+    },
+    {
+      "id": "P05",
+      "title": "SPV management",
+      "url": "https://carta.com/fund-management/spv/",
+      "kind": "Product page",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; current authenticated UI not inspected."
+    },
+    {
+      "id": "P06",
+      "title": "LP Portfolio Analytics",
+      "url": "https://carta.com/lp-portfolio-analytics/",
+      "kind": "Product page",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; current authenticated UI not inspected."
+    },
+    {
+      "id": "P07",
+      "title": "Loan Operations",
+      "url": "https://carta.com/fund-management/loan-operations/",
+      "kind": "Product page",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; current authenticated UI not inspected."
+    },
+    {
+      "id": "P08",
+      "title": "Deal CRM product description",
+      "url": "https://carta.com/fund-management/deal-crm/",
+      "kind": "Product page",
+      "evidence": "D",
+      "inspection": "Explicitly describes a spreadsheet-style interface. Does not establish a Kanban drag-and-drop workflow."
+    },
+    {
+      "id": "P09",
+      "title": "LP CRM product description",
+      "url": "https://carta.com/fund-management/fund-administration/lp-crm/",
+      "kind": "Product page",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; current authenticated UI not inspected."
+    },
+    {
+      "id": "P10",
+      "title": "Fund Forecasting — UK product page",
+      "url": "https://carta.com/uk/en/fund-management/fund-forecasting/",
+      "kind": "Regional product page",
+      "evidence": "D",
+      "inspection": "Standalone/module packaging differs from US page; current account entitlement remains a separate verification task."
+    },
+    {
+      "id": "D01",
+      "title": "Data Warehouse refresh cadence",
+      "url": "https://docs.carta.com/api-platform/guides/guides/refresh-cadence/",
+      "kind": "Developer documentation",
+      "evidence": "D",
+      "inspection": "Full cadence reference retrieved. Many tables refresh every 10 minutes; certain cohort tables refresh daily at noon ET. Use last_refreshed_at."
+    },
+    {
+      "id": "D02",
+      "title": "Data Warehouse data dictionary",
+      "url": "https://docs.carta.com/api-platform/guides/guides/data-warehouse-schemas/",
+      "kind": "Developer documentation",
+      "evidence": "D",
+      "inspection": "Search extract verified domain/table index only. Full schema fetch timed out. No claim to have read every column or private application schema."
+    },
+    {
+      "id": "M01",
+      "title": "RVPI and related metric formulas",
+      "url": "https://carta.com/learn/private-funds/management/fund-performance/rvpi/",
+      "kind": "Official educational reference",
+      "evidence": "D",
+      "inspection": "Explicit formula table provides a cross-check for the malformed Forecasting metrics extraction; not a full specification of Forecasting fee/credit-line conventions."
+    },
+    {
+      "id": "M02",
+      "title": "TVPI definition",
+      "url": "https://carta.com/learn/private-funds/management/fund-performance/tvpi/",
+      "kind": "Official educational reference",
+      "evidence": "D",
+      "inspection": "Official written instructions reviewed; current authenticated UI not inspected."
+    }
+  ],
+  "visual_evidence_attempts": [
+    {
+      "subject": "Forecasting dashboard example",
+      "url": "https://images.ctfassets.net/y88td1zx1ufe/7F1sieqBOiKdS0djmE8sCl/2afffe2ce737d8c7b415d55a7f014041/image_9.png",
+      "result": "Official asset linked from the Forecasting collection; failed to render.",
+      "visual_parity_evidence": false
+    },
+    {
+      "subject": "Construction screenshot",
+      "url": "https://images.ctfassets.net/y88td1zx1ufe/4Cx3XQkvYQJ0ENlVxpMPJ0/797bee932e71f2da392312b684c31d7e/Portfolio_construction_UI_1_-_option_1__1_.png",
+      "result": "Official construction-page asset; failed to render.",
+      "visual_parity_evidence": false
+    },
+    {
+      "subject": "Portfolio reporting screenshot",
+      "url": "https://images.ctfassets.net/y88td1zx1ufe/5kcdIP17l1KtYZLB54amoV/e014211ebd9a141a235a19b9557e4cde/Portfolio_reporting_UI_1__1_.png",
+      "result": "Official monitoring-page asset; failed to render.",
+      "visual_parity_evidence": false
+    },
+    {
+      "subject": "Public published fund example",
+      "url": "https://fund-forecasting.app.carta.com/published/LaGarita",
+      "result": "Linked by the official collection; web fetch failed and Exa returned empty content. Not interacted with.",
+      "visual_parity_evidence": false
+    },
+    {
+      "subject": "Visual-accounting video poster",
+      "url": "https://embed-ssl.wistia.com/deliveries/09e881e67bcb949ec2e212de9e56dfee.jpg?image_crop_resized=1280x720",
+      "result": "A title card was accessible; it does not verify the application layout.",
+      "visual_parity_evidence": false
+    },
+    {
+      "subject": "Loan setup screenshot",
+      "url": "https://images.ctfassets.net/y88td1zx1ufe/3Cw6JS8eReqEm84w8WAvHq/4559541bc057b2bd39180a6fb2d0217c/Feature_-__Security_Master.png",
+      "result": "Official loan page image link discovered; image request failed.",
+      "visual_parity_evidence": false
+    },
+    {
+      "subject": "SPV homepage image",
+      "url": "https://images.ctfassets.net/y88td1zx1ufe/1QC5hFEipLZQyZXsSoThhC/0f19ab693edca54f50b76fa1c2667ce4/SPV_hero__3_.png",
+      "result": "Official SPV page image link discovered; image request failed.",
+      "visual_parity_evidence": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+---
+description: Persistent product, evidence, correctness, and delivery constraints for the Carta Fund ERP prototype.
+alwaysApply: true
+---
+
+# Carta Fund ERP project guardrails
+
+- The implementation brief is `prompts/BUILD_CARTA_FUND_ERP.md`. Product evidence is in `docs/carta/carta_fund_erp_research.md` and `docs/carta/carta_fund_erp_evidence.json`.
+- Read the full brief and research at project initiation. Before later edits, inspect the relevant feature/source and current `docs/BUILD_STATUS.md` rather than relying on conversation memory.
+- Preserve repository instructions and user changes. Do not wipe a repository, reset user data, upgrade the stack wholesale, or deploy without authorization.
+- Build a working Next.js application, not static pages. Persist real local application state; derive metrics from shared records and tested calculations.
+- Use synthetic data with an independent-prototype label. No real credentials, bank transfers, messages, signatures, formation, filings, screening, or paid integrations without separate authorization.
+- Simulated external steps must be explicitly labeled, inspectable, and stateful. Never claim a provider, subagent, browser, or test was used if it was not.
+- Evidence D is written documentation, not executed/visual proof. The original screen inventory has no full current screens rated V. Document proposed routes/designs/schema as implementation decisions.
+- Keep construction, actual investment history, current forecast, investment case, fund scenario, and posted accounting separate.
+- Keep investment preferences, fund waterfall, multi-entity waterfall, GP vesting, and bank-payment execution separate.
+- Monthly cash-flow overrides must not alone replan investment counts. A grouped fund view must not create an investment or duplicate exposure.
+- Respect nested event/parent saves, scenario isolation, review versus acceptance, explicit valuation posting, and historical/disclosure cutoffs.
+- LP CRM, LP Portal, and allocator analytics are distinct experiences. Enforce firm/entity/record/action scope server-side, including RSC payloads, APIs, exports, files, and shared links.
+- Use exact money arithmetic, dated cash flows, explicit currencies/bases, typed unavailable results, and deterministic tests. Never replace unverified financial semantics with confident invented formulas.
+- Implement supported calculation profiles explicitly. Unsupported configurations cannot silently fall back to another method or be marked complete.
+- Use transactional, idempotent posting; balanced journal entries; source provenance; input/calculation versions; refresh timestamps; and explicit conflict handling.
+- Keep server-only data and secrets out of Client Components. Prefer small modules and shared services over giant pages or unnecessary frameworks.
+- Every primary control must work or accurately identify its unsupported dependency. Charts, tables, exports, and linked views must reconcile.
+- Follow the brief's restrained enterprise design and verify real browser states, not only screenshots or route titles.
+- Maintain `docs/carta/implementation_tracker.json`: preserve FF/ERP/WF/AC IDs and distinguish source evidence, implementation status, simulations, and actual verification.
+- Work in runnable vertical slices and continue through the specified scope. Do not silently drop later milestones or count placeholder pages as implemented modules.
+- Keep `docs/BUILD_STATUS.md` updated for resumption. Record actual commands/results and precise remaining work; never report unrun checks as passing.

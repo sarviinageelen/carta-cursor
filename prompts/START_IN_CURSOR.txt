@@ -1,0 +1,11 @@
+Implement the Carta Fund ERP application specified in @prompts/BUILD_CARTA_FUND_ERP.md.
+
+First inspect this repository and its instructions. Then read the complete build brief, @docs/carta/carta_fund_erp_research.md, and @docs/carta/carta_fund_erp_evidence.json. Use @docs/carta/implementation_tracker.json to track coverage, not as evidence that anything has already been built.
+
+Build directly in the repository using Next.js, real local persistence, synthetic connected data, functional workflows, tested financial calculations, and a polished enterprise UI. Use the brief's defaults where decisions are missing, and record assumptions rather than asking me routine implementation questions.
+
+Fund Forecasting must have substantial depth, but the broader ERP modules are also in scope. Keep the investor, company, fund, modeling, and accounting records connected; do not deliver separate static dashboards.
+
+Give a short implementation plan, then immediately build the first working vertical slice. Continue through the remaining milestones and verify the application in the browser. Only simulate external services, label those simulations clearly, and do not claim exact Carta visual or financial parity without evidence.
+
+Keep the implementation tracker and BUILD_STATUS current. At handoff, report actual test results, working journeys, unsupported calculation profiles, and any unfinished features. Do not stop after planning, scaffolding, or the homepage.

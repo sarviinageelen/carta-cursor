@@ -1,0 +1,1758 @@
+{
+  "project": "Carta Fund ERP independent local prototype",
+  "prepared_on": "2026-09-16",
+  "purpose": "Initial implementation coverage, not evidence of implementation or executed tests.",
+  "current_milestone": 0,
+  "status_legend": {
+    "implementation": [
+      "not_started",
+      "in_progress",
+      "implemented",
+      "partial",
+      "blocked"
+    ],
+    "verification": [
+      "not_run",
+      "passed",
+      "failed",
+      "blocked"
+    ],
+    "runtime": [
+      "not_selected",
+      "local_real",
+      "external_simulation",
+      "mixed"
+    ],
+    "note": "Source evidence status and implementation verification status are separate. D does not become V because the prototype is tested."
+  },
+  "screens": [
+    {
+      "id": "FF01",
+      "title": "Home and fund creation",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F01"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF02",
+      "title": "Construction Wizard",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F02"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF03",
+      "title": "General fund configuration",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F03"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF04",
+      "title": "Sector-profile stage editor",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F04"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF05",
+      "title": "Allocation editor",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F05",
+        "F34"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF06",
+      "title": "Fee and expense schedules",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F06"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF07",
+      "title": "Exit-recycling configuration",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F07"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF08",
+      "title": "Fund-level waterfall assumptions",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F08"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF09",
+      "title": "Modeled limited partners",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F09"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF10",
+      "title": "Construction/Current analytical dashboard",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F10"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF11",
+      "title": "Monthly cash-flow actuals editor",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F11"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF12",
+      "title": "Actual-investments table",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F12",
+        "F13"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF13",
+      "title": "Saved table views and report configuration",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F14"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF14",
+      "title": "Investment creation and editor",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F15"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF15",
+      "title": "Round/event editor",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F16"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF16",
+      "title": "Investment performance cases",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F17"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF17",
+      "title": "Fund-wide Scenario Builder",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F18"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF18",
+      "title": "Time Machine historical view",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F19"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF19",
+      "title": "KPI definitions and values",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F20"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF20",
+      "title": "KPI requests and review",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F20"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF21",
+      "title": "Custom formula builder",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F21"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF22",
+      "title": "Follow-on reserve analysis",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F22"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF23",
+      "title": "Document Center",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F23"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF24",
+      "title": "Publishing controls and reader",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F24"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF25",
+      "title": "Collaborator administration",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F25"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF26",
+      "title": "Multi-fund analytical view",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F26"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF27",
+      "title": "Round-currency and FX controls",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F27"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF28",
+      "title": "Investment integration review",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "I01",
+        "R01"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF29",
+      "title": "Fund-actuals integration",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "I02",
+        "R03"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF30",
+      "title": "Company-financials synchronization",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "I03",
+        "R02"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF31",
+      "title": "SAFE/note conversion and ownership updates",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F31"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF32",
+      "title": "Investment liquidation preferences",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F32"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "FF33",
+      "title": "Fund-of-funds investment",
+      "area": "Fund Forecasting",
+      "source_ids": [
+        "F33"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 2,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP01",
+      "title": "Visual-accounting home and entity graph",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T01"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 1,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP02",
+      "title": "Deal CRM records, relationships and pipeline",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T02",
+        "P08",
+        "R05"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 3,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP03",
+      "title": "LP CRM record and fundraising workspace",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T03",
+        "P09"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 3,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP04",
+      "title": "Closing command center and subscription review",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T04"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 3,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP05",
+      "title": "Capital-call creation and notices",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T05",
+        "T18"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 3,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP06",
+      "title": "LP-facing portal and GP disclosure controls",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T06"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 3,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP07",
+      "title": "Fund Tax workspace",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T07"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP08",
+      "title": "Data Collection configuration, submission and validation",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T08"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP09",
+      "title": "Portfolio valuation workbench and posting",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T09"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP10",
+      "title": "Multi-entity waterfall analysis",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T10"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP11",
+      "title": "GP carry and vesting",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T11"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP12",
+      "title": "Distribution authorization and payment tracking",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T12"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP13",
+      "title": "Management-company accounting",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T13"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP14",
+      "title": "Ramp expense integration",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T14"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP15",
+      "title": "Auditor workspace",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T15"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 4,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP16",
+      "title": "KYC and ongoing diligence",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T16"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 3,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP17",
+      "title": "Data Explorer and warehouse-backed analysis",
+      "area": "Fund ERP",
+      "source_ids": [
+        "T17",
+        "D01",
+        "R04"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 5,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP18",
+      "title": "SPV formation and ongoing administration",
+      "area": "Fund ERP",
+      "source_ids": [
+        "P05"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 5,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP19",
+      "title": "Allocator-facing LP Portfolio Analytics",
+      "area": "Fund ERP",
+      "source_ids": [
+        "P06"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 5,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    },
+    {
+      "id": "ERP20",
+      "title": "Loan Operations and borrower/co-lender access",
+      "area": "Fund ERP",
+      "source_ids": [
+        "P07"
+      ],
+      "source_evidence": "D",
+      "source_visual_verified": false,
+      "initial_milestone": 5,
+      "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
+      "implementation_status": "not_started",
+      "verification_status": "not_run",
+      "runtime_classification": "not_selected",
+      "routes": [],
+      "code_paths": [],
+      "test_paths": [],
+      "browser_evidence": [],
+      "assumptions": [],
+      "limitations": [],
+      "remaining_tasks": []
+    }
+  ],
+  "workflows": [
+    {
+      "id": "WF01",
+      "title": "Create and construct a fund",
+      "source_ids": [
+        "F01",
+        "F02",
+        "F10"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF02",
+      "title": "Maintain a portfolio investment",
+      "source_ids": [
+        "F15",
+        "F16",
+        "F17"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF03",
+      "title": "Compare a fund scenario",
+      "source_ids": [
+        "F18"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF04",
+      "title": "Review a historical period",
+      "source_ids": [
+        "F19"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF05",
+      "title": "Collect company KPIs",
+      "source_ids": [
+        "F20"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF06",
+      "title": "Progress an LP to a closed commitment",
+      "source_ids": [
+        "T03",
+        "T04",
+        "T06"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF07",
+      "title": "Issue a capital call",
+      "source_ids": [
+        "T05",
+        "T18"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF08",
+      "title": "Collect data and post a valuation",
+      "source_ids": [
+        "T08",
+        "T09"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF09",
+      "title": "Model exit proceeds",
+      "source_ids": [
+        "T10",
+        "T12"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF10",
+      "title": "Execute a simulated distribution workflow",
+      "source_ids": [
+        "T12"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF11",
+      "title": "Complete tax workflow",
+      "source_ids": [
+        "T07"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    },
+    {
+      "id": "WF12",
+      "title": "Aggregate modeled funds",
+      "source_ids": [
+        "F26",
+        "F33"
+      ],
+      "status": "not_started",
+      "test_paths": [],
+      "verification_status": "not_run",
+      "notes": []
+    }
+  ],
+  "acceptance_contracts": [
+    {
+      "id": "AC01",
+      "title": "Stage-probability guard",
+      "source_ids": [
+        "F04"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC02",
+      "title": "Terminal stage",
+      "source_ids": [
+        "F04"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC03",
+      "title": "Residual failure",
+      "source_ids": [
+        "F04"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC04",
+      "title": "Construction versus actuals",
+      "source_ids": [
+        "F10"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC05",
+      "title": "Actual cash-flow override",
+      "source_ids": [
+        "F11"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC06",
+      "title": "Nested save",
+      "source_ids": [
+        "F16"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC07",
+      "title": "Scenario isolation",
+      "source_ids": [
+        "F18",
+        "T09"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC08",
+      "title": "Historical mode",
+      "source_ids": [
+        "F19"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC09",
+      "title": "Pending KPI submission",
+      "source_ids": [
+        "F20"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC10",
+      "title": "KPI auto-approval branch",
+      "source_ids": [
+        "F20"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC11",
+      "title": "Scoped published reader",
+      "source_ids": [
+        "F24"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC12",
+      "title": "LP portal cutoff",
+      "source_ids": [
+        "T06"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC13",
+      "title": "Valuation draft versus posting",
+      "source_ids": [
+        "T09"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC14",
+      "title": "External payment boundary",
+      "source_ids": [
+        "T12"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC15",
+      "title": "Warehouse freshness",
+      "source_ids": [
+        "D01"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC16",
+      "title": "Matched-basis performance multiples",
+      "source_ids": [
+        "M01",
+        "M02"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC17",
+      "title": "Undefined ratios",
+      "source_ids": [
+        "M01"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC18",
+      "title": "IRR input quality",
+      "source_ids": [],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC19",
+      "title": "Currency eligibility",
+      "source_ids": [
+        "F26"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC20",
+      "title": "FoF versus grouped view",
+      "source_ids": [
+        "F26",
+        "F33"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC21",
+      "title": "SAFE conversion",
+      "source_ids": [
+        "F31"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC22",
+      "title": "Relative formula period",
+      "source_ids": [
+        "F21"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC23",
+      "title": "Import provenance",
+      "source_ids": [
+        "R01"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC24",
+      "title": "Concurrent writes",
+      "source_ids": [
+        "F29"
+      ],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC25",
+      "title": "Connected-record integrity",
+      "source_ids": [],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    },
+    {
+      "id": "AC26",
+      "title": "Functional controls",
+      "source_ids": [],
+      "status": "not_run",
+      "test_paths": [],
+      "actual_result": null,
+      "notes": []
+    }
+  ],
+  "source_gaps": [
+    {
+      "id": "G01",
+      "topic": "Authenticated screen coverage",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G02",
+      "topic": "Screenshots and video frames",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G03",
+      "topic": "Chart interactions and actual outputs",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G04",
+      "topic": "Metrics text inconsistency",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G05",
+      "topic": "Capital-call recognition timing",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G06",
+      "topic": "Preference/waterfall semantics",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G07",
+      "topic": "Integration permissions and conflicts",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G08",
+      "topic": "Persist/cancel/delete/import edge states",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G09",
+      "topic": "Current packaging and regional variants",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G10",
+      "topic": "Permission matrix",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G11",
+      "topic": "Published snapshot semantics",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G12",
+      "topic": "Advanced Forecasting breadth",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G13",
+      "topic": "LP Portfolio Analytics and Loan Operations screens",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G14",
+      "topic": "Data dictionary completeness",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G15",
+      "topic": "External integrations and service execution",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    },
+    {
+      "id": "G16",
+      "topic": "Limits and concurrent editing",
+      "source_status": "unresolved",
+      "prototype_decision": null,
+      "evidence_added": []
+    }
+  ],
+  "checks": {
+    "lint": "not_run",
+    "typecheck": "not_run",
+    "unit_tests": "not_run",
+    "browser_tests": "not_run",
+    "build": "not_run",
+    "browser_visual_review": "not_run"
+  }
+}
