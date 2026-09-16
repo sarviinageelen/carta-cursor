@@ -1,0 +1,16 @@
+{
+  "name": "Carta Fund ERP",
+  "install": "npm ci && npm run db:setup",
+  "terminals": [
+    {
+      "name": "dev",
+      "command": "npm run dev"
+    }
+  ],
+  "ports": [
+    {
+      "name": "web",
+      "port": 3000
+    }
+  ]
+}
