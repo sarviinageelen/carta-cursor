@@ -142,6 +142,13 @@ export function accountNet(entityId: string, accountCode: string, asOf: string) 
   return row?.net ?? "0.00";
 }
 
+/** Credit-normal capital accounts (paid-in) as a positive amount for LP multiples. */
+export function creditNormalBalance(entityId: string, accountCode: string, asOf: string) {
+  const row = balancesAsOf(entityId, asOf).find((item) => item.accountCode === accountCode);
+  if (!row) return "0.00";
+  return dec(row.credit).minus(dec(row.debit)).toFixed(2);
+}
+
 export function assertJournalsBalance() {
   const db = getDb();
   const entries = db.select().from(schema.journalEntries).all();

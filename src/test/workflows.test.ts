@@ -14,7 +14,7 @@ const { constructionForecastForFund, currentForecastForFund, projectedDealCount,
 );
 const { persistInvestmentDraft, recalculateScenario } = await import("../server/services/scenarios");
 const { postValuation, saveDraftValuation } = await import("../server/services/valuations");
-const { accountNet, assertJournalsBalance } = await import("../server/services/accounting");
+const { accountNet, assertJournalsBalance, creditNormalBalance } = await import("../server/services/accounting");
 const { issueCapitalCall } = await import("../server/services/capital");
 const { simulateApproveAndPay } = await import("../server/services/distributions");
 const { rejectSubmission, submitKpi } = await import("../server/services/kpis");
@@ -142,6 +142,19 @@ describe("seeded workflow contracts", () => {
   it("second firm isolation records exist", () => {
     const harbor = getDb().select().from(schema.firms).where(eq(schema.firms.id, "firm_harborstone")).get();
     expect(harbor).toBeTruthy();
+  });
+
+  it("seeded Fund II TVPI uses credit-normal paid-in", async () => {
+    const { performanceMultiples } = await import("../domain/metrics");
+    const paidIn = creditNormalBalance("fund_nb_ii", "3200", "2026-09-16");
+    expect(Number(paidIn)).toBeGreaterThan(0);
+    const multiples = performanceMultiples({
+      paidIn,
+      distributions: accountNet("fund_nb_ii", "3300", "2026-09-16"),
+      residualValue: accountNet("fund_nb_ii", "1400", "2026-09-16"),
+    });
+    expect(multiples.status).toBe("ok");
+    if (multiples.status === "ok") expect(Number(multiples.value.tvpi)).toBeGreaterThan(0);
   });
 
   it("AC24 scenario recalculate does not mutate journals or construction deal counts", () => {

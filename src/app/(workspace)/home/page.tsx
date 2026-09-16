@@ -5,10 +5,11 @@ import { Money } from "@/components/money";
 import { Metric, PageHeader, Panel } from "@/components/ui/panel";
 import { Badge } from "@/components/ui/badge";
 import { getDb, schema } from "@/server/db";
-import { accountNet } from "@/server/services/accounting";
+import { accountNet, creditNormalBalance } from "@/server/services/accounting";
 import { today } from "@/server/clock";
 import { currentForecastForFund } from "@/server/services/forecast";
 import { performanceMultiples } from "@/domain/metrics";
+import { multiple } from "@/components/money";
 
 export default async function HomePage() {
   const db = getDb();
@@ -22,11 +23,12 @@ export default async function HomePage() {
   const asOf = today();
   const nav = accountNet("fund_nb_ii", "1400", asOf);
   const cash = accountNet("fund_nb_ii", "1000", asOf);
-  const paidIn = accountNet("fund_nb_ii", "3200", asOf);
+  const paidIn = creditNormalBalance("fund_nb_ii", "3200", asOf);
+  const distributions = accountNet("fund_nb_ii", "3300", asOf);
   const current = currentForecastForFund("fund_nb_ii", asOf);
   const multiples = performanceMultiples({
-    paidIn: paidIn.replace("-", "") === paidIn ? (Number(paidIn) < 0 ? String(-Number(paidIn)) : paidIn) : paidIn,
-    distributions: "0",
+    paidIn,
+    distributions,
     residualValue: nav,
   });
   const companies = db.select().from(schema.companies).all();
@@ -50,7 +52,7 @@ export default async function HomePage() {
         <Metric label="Fund II investments FV" value={<Money value={nav} />} hint="Posted valuations only" />
         <Metric
           label="Fund II TVPI"
-          value={multiples.status === "ok" ? `${Number(multiples.value.tvpi).toFixed(2)}x` : "n/a"}
+          value={multiples.status === "ok" ? multiple(multiples.value.tvpi) : "n/a"}
           hint="Matched LP basis"
         />
         <Metric
