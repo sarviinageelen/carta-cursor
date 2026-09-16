@@ -2,7 +2,7 @@
   "project": "Carta Fund ERP independent local prototype",
   "prepared_on": "2026-09-16",
   "purpose": "Initial implementation coverage, not evidence of implementation or executed tests.",
-  "current_milestone": 0,
+  "current_milestone": 6,
   "status_legend": {
     "implementation": [
       "not_started",
@@ -37,14 +37,25 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds",
+        "/funds/new"
+      ],
+      "code_paths": [
+        "/funds",
+        "/funds/new"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -59,14 +70,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -81,14 +101,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -103,14 +132,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -126,14 +164,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -148,14 +195,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -170,14 +226,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -192,14 +257,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -214,14 +288,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/construction"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -236,14 +319,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -258,14 +350,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/monthly"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/monthly"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -281,14 +382,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -303,14 +413,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -325,14 +444,25 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments",
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments",
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -347,14 +477,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -369,14 +508,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -391,14 +539,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/scenarios"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/scenarios"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -413,14 +570,25 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/time-machine",
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/time-machine",
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -435,14 +603,25 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/kpis",
+        "/data-collection"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/kpis",
+        "/data-collection"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -457,14 +636,25 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/kpis",
+        "/submit/[token]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/kpis",
+        "/submit/[token]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -479,14 +669,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/formulas"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/formulas"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -501,14 +700,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/reserves"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/reserves"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -523,14 +731,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/documents"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/documents"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -545,14 +762,25 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/funds/[fundId]/forecasting/sharing",
+        "/published/[token]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/sharing",
+        "/published/[token]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -567,14 +795,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/funds/[fundId]/forecasting/sharing"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/sharing"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -589,14 +826,27 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/home",
+        "/funds/[fundId]/operations/reporting",
+        "/funds/[fundId]/forecasting/time-machine"
+      ],
+      "code_paths": [
+        "/home",
+        "/funds/[fundId]/operations/reporting",
+        "/funds/[fundId]/forecasting/time-machine"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -611,14 +861,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -634,14 +893,25 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/integrations",
+        "/funds/[fundId]/forecasting/integrations"
+      ],
+      "code_paths": [
+        "/integrations",
+        "/funds/[fundId]/forecasting/integrations"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -657,14 +927,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/integrations"
+      ],
+      "code_paths": [
+        "/integrations"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -680,14 +959,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/data-collection"
+      ],
+      "code_paths": [
+        "/data-collection"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -702,14 +990,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -724,14 +1021,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -746,14 +1052,23 @@
       "source_visual_verified": false,
       "initial_milestone": 2,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -768,14 +1083,23 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/home"
+      ],
+      "code_paths": [
+        "/home"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -792,14 +1116,27 @@
       "source_visual_verified": false,
       "initial_milestone": 3,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/crm/deals",
+        "/crm/companies/[companyId]",
+        "/crm/people"
+      ],
+      "code_paths": [
+        "/crm/deals",
+        "/crm/companies/[companyId]",
+        "/crm/people"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -815,14 +1152,27 @@
       "source_visual_verified": false,
       "initial_milestone": 3,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/crm/investors",
+        "/crm/investors/[investorId]",
+        "/fundraising"
+      ],
+      "code_paths": [
+        "/crm/investors",
+        "/crm/investors/[investorId]",
+        "/fundraising"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -837,14 +1187,23 @@
       "source_visual_verified": false,
       "initial_milestone": 3,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/fundraising"
+      ],
+      "code_paths": [
+        "/fundraising"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -860,14 +1219,23 @@
       "source_visual_verified": false,
       "initial_milestone": 3,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]/operations/calls"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/operations/calls"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -882,14 +1250,25 @@
       "source_visual_verified": false,
       "initial_milestone": 3,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/lp",
+        "/lp/funds/[fundId]"
+      ],
+      "code_paths": [
+        "/lp",
+        "/lp/funds/[fundId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -904,14 +1283,23 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/tax"
+      ],
+      "code_paths": [
+        "/tax"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -926,14 +1314,25 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/data-collection",
+        "/submit/[token]"
+      ],
+      "code_paths": [
+        "/data-collection",
+        "/submit/[token]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -948,14 +1347,25 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/valuations",
+        "/funds/[fundId]/operations/ledger"
+      ],
+      "code_paths": [
+        "/valuations",
+        "/funds/[fundId]/operations/ledger"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -970,14 +1380,23 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/waterfalls"
+      ],
+      "code_paths": [
+        "/waterfalls"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -992,14 +1411,23 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/carry"
+      ],
+      "code_paths": [
+        "/carry"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1014,14 +1442,23 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/funds/[fundId]/operations/distributions"
+      ],
+      "code_paths": [
+        "/funds/[fundId]/operations/distributions"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1036,14 +1473,23 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/management-company"
+      ],
+      "code_paths": [
+        "/management-company"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1058,14 +1504,25 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/management-company",
+        "/integrations"
+      ],
+      "code_paths": [
+        "/management-company",
+        "/integrations"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1080,14 +1537,23 @@
       "source_visual_verified": false,
       "initial_milestone": 4,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/audit"
+      ],
+      "code_paths": [
+        "/audit"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1102,14 +1568,23 @@
       "source_visual_verified": false,
       "initial_milestone": 3,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/kyc"
+      ],
+      "code_paths": [
+        "/kyc"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1126,14 +1601,23 @@
       "source_visual_verified": false,
       "initial_milestone": 5,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/data-explorer"
+      ],
+      "code_paths": [
+        "/data-explorer"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1148,14 +1632,23 @@
       "source_visual_verified": false,
       "initial_milestone": 5,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "mixed",
+      "routes": [
+        "/spvs"
+      ],
+      "code_paths": [
+        "/spvs"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1170,14 +1663,23 @@
       "source_visual_verified": false,
       "initial_milestone": 5,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/allocator"
+      ],
+      "code_paths": [
+        "/allocator"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     },
@@ -1192,14 +1694,25 @@
       "source_visual_verified": false,
       "initial_milestone": 5,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "implemented",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/loans",
+        "/loans/[loanId]"
+      ],
+      "code_paths": [
+        "/loans",
+        "/loans/[loanId]"
+      ],
+      "test_paths": [
+        "src/domain/finance.test.ts",
+        "src/test/workflows.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Prototype implementation; source evidence remains D. Visual layout is an implementation decision."
+      ],
       "limitations": [],
       "remaining_tasks": []
     }
@@ -1216,7 +1729,14 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/funds/new",
+        "/funds/[fundId]/forecasting/construction",
+        "/funds/[fundId]/forecasting"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF02",
@@ -1229,7 +1749,12 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/funds/[fundId]/forecasting/investments/[investmentId]"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF03",
@@ -1240,7 +1765,12 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/funds/[fundId]/forecasting/scenarios"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF04",
@@ -1251,7 +1781,13 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/funds/[fundId]/forecasting/investments",
+        "/funds/[fundId]/forecasting/time-machine"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF05",
@@ -1262,7 +1798,13 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/data-collection",
+        "/submit/[token]"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF06",
@@ -1275,7 +1817,13 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/fundraising",
+        "/lp"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF07",
@@ -1287,7 +1835,12 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/funds/[fundId]/operations/calls"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF08",
@@ -1299,7 +1852,13 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/data-collection",
+        "/valuations"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF09",
@@ -1311,7 +1870,12 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/waterfalls"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF10",
@@ -1322,7 +1886,12 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/funds/[fundId]/operations/distributions"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF11",
@@ -1333,7 +1902,12 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/tax"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     },
     {
       "id": "WF12",
@@ -1345,7 +1919,13 @@
       "status": "not_started",
       "test_paths": [],
       "verification_status": "not_run",
-      "notes": []
+      "notes": [],
+      "routes": [
+        "/home",
+        "/funds/[fundId]/forecasting/investments"
+      ],
+      "implementation_status": "implemented",
+      "runtime_classification": "mixed"
     }
   ],
   "acceptance_contracts": [
@@ -1748,11 +2328,11 @@
     }
   ],
   "checks": {
-    "lint": "not_run",
-    "typecheck": "not_run",
-    "unit_tests": "not_run",
-    "browser_tests": "not_run",
-    "build": "not_run",
-    "browser_visual_review": "not_run"
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit_tests": "passed",
+    "browser_tests": "partial",
+    "build": "passed",
+    "browser_visual_review": "passed"
   }
 }
