@@ -111,6 +111,8 @@ export function persistInvestmentDraft(input: {
     isProjected?: boolean;
     notes?: string | null;
     securityType?: string | null;
+    postMoney?: string | null;
+    preMoney?: string | null;
   }>;
   caseId: string;
 }) {
@@ -121,8 +123,11 @@ export function persistInvestmentDraft(input: {
     throw new Error("Version conflict: reload before saving. Prototype uses optimistic locking (intentional deviation from last-save-wins).");
   }
   db.transaction((tx) => {
+    const previous = tx.select().from(schema.investmentEvents).where(eq(schema.investmentEvents.caseId, input.caseId)).all();
+    const previousById = new Map(previous.map((row) => [row.id, row]));
     tx.delete(schema.investmentEvents).where(eq(schema.investmentEvents.caseId, input.caseId)).run();
     for (const event of input.events) {
+      const prior = event.id ? previousById.get(event.id) : undefined;
       tx.insert(schema.investmentEvents)
         .values({
           id: event.id ?? createId("ev"),
@@ -130,19 +135,19 @@ export function persistInvestmentDraft(input: {
           kind: event.kind,
           date: event.date,
           amount: event.amount,
-          ownership: event.ownership ?? null,
-          preMoney: null,
-          postMoney: null,
-          roundCurrency: investment.currency,
-          fxRate: "1",
-          fxRateDate: event.date,
-          securityType: event.securityType ?? "preferred",
-          valuationCap: null,
-          convertedOwnership: event.ownership ?? null,
-          isProjected: event.isProjected ?? false,
-          sourceProvenance: "manual",
-          sourceRecordId: null,
-          notes: event.notes ?? null,
+          ownership: event.ownership ?? prior?.ownership ?? null,
+          preMoney: event.preMoney ?? prior?.preMoney ?? null,
+          postMoney: event.postMoney ?? prior?.postMoney ?? null,
+          roundCurrency: prior?.roundCurrency ?? investment.currency,
+          fxRate: prior?.fxRate ?? "1",
+          fxRateDate: prior?.fxRateDate ?? event.date,
+          securityType: event.securityType ?? prior?.securityType ?? "preferred",
+          valuationCap: prior?.valuationCap ?? null,
+          convertedOwnership: event.ownership ?? prior?.convertedOwnership ?? null,
+          isProjected: event.isProjected ?? prior?.isProjected ?? false,
+          sourceProvenance: prior?.sourceProvenance ?? "manual",
+          sourceRecordId: prior?.sourceRecordId ?? null,
+          notes: event.notes ?? prior?.notes ?? null,
         })
         .run();
     }

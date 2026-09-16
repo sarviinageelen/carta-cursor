@@ -22,6 +22,9 @@ export default async function InvestmentDetailPage({
   const fund = getDb().select().from(schema.legalEntities).where(eq(schema.legalEntities.id, fundId)).get();
   const metrics = investmentMetrics(investmentId, today(), false);
   const cases = getDb().select().from(schema.investmentCases).where(eq(schema.investmentCases.investmentId, investmentId)).all();
+  const editorEvents = metrics.caseId
+    ? getDb().select().from(schema.investmentEvents).where(eq(schema.investmentEvents.caseId, metrics.caseId)).all()
+    : [];
   const prefs = metrics.caseId
     ? getDb().select().from(schema.investmentLiqPrefs).where(eq(schema.investmentLiqPrefs.caseId, metrics.caseId)).all()
     : [];
@@ -80,7 +83,7 @@ export default async function InvestmentDetailPage({
         caseId={metrics.caseId}
         version={investment.version}
         inceptionDate={fund?.inceptionDate ?? null}
-        events={metrics.events.map((event) => ({
+        events={editorEvents.map((event) => ({
           id: event.id,
           kind: event.kind,
           date: event.date,
@@ -89,6 +92,8 @@ export default async function InvestmentDetailPage({
           isProjected: event.isProjected,
           notes: event.notes,
           securityType: event.securityType,
+          postMoney: event.postMoney,
+          preMoney: event.preMoney,
         }))}
       />
       ) : null}

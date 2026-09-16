@@ -15,6 +15,8 @@ type EventDraft = {
   isProjected?: boolean;
   notes?: string | null;
   securityType?: string | null;
+  postMoney?: string | null;
+  preMoney?: string | null;
 };
 
 export function InvestmentEditor({
@@ -108,6 +110,10 @@ export function InvestmentEditor({
               />{" "}
               Projected
             </label>
+            <Label>Notes</Label>
+            <Input value={nested.notes ?? ""} onChange={(event) => updateNested({ notes: event.target.value })} />
+            <Label>Post-money (equity value)</Label>
+            <Input value={nested.postMoney ?? ""} onChange={(event) => updateNested({ postMoney: event.target.value || null })} />
             <div className="flex gap-2">
               <Button type="button" variant="secondary" onClick={() => setEditingIndex(null)}>
                 Close nested editor

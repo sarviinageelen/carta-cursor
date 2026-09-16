@@ -39,6 +39,11 @@ export default async function TimeMachinePage({
           <Input type="date" name="asOf" defaultValue={asOf} />
         </div>
         <Button variant="secondary">Recalculate historically</Button>
+        {["2024-12-31", "2025-06-30", "2025-12-31"].map((date) => (
+          <Link key={date} href={`?asOf=${date}`} className="text-[13px] text-accent">
+            {date}
+          </Link>
+        ))}
         {historical ? (
           <Link href="?" className="text-[13px] text-accent">
             Reset to demo clock {clock}

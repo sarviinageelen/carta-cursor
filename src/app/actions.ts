@@ -140,6 +140,8 @@ export async function saveInvestmentAction(formData: FormData) {
     ownership?: string | null;
     isProjected?: boolean;
     notes?: string | null;
+    postMoney?: string | null;
+    preMoney?: string | null;
   }>;
   persistInvestmentDraft({ investmentId, caseId, version, events: raw });
   revalidatePath(`/funds/${fundId}/forecasting/investments/${investmentId}`);

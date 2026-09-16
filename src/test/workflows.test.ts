@@ -120,13 +120,15 @@ describe("seeded workflow contracts", () => {
       version: investment!.version,
       caseId: caseRow!.id,
       events: [
-        { kind: "financing", date: "2025-01-10", amount: "2500000", ownership: "0.11", isProjected: false },
+        { id: "inv_nimbus_ii_ev_0", kind: "financing", date: "2025-01-10", amount: "2500000", ownership: "0.11", isProjected: false },
+        { id: "inv_nimbus_ii_ev_1", kind: "exit", date: "2029-01-10", amount: "9000000", isProjected: true },
         { kind: "valuation_update", date: "2026-01-01", amount: "35000000", ownership: "0.11", isProjected: false, notes: "nested edit" },
-        { kind: "exit", date: "2029-01-10", amount: "9000000", isProjected: true },
       ],
     });
     const events = getDb().select().from(schema.investmentEvents).all().filter((row) => row.caseId === caseRow!.id);
     expect(events.some((row) => row.notes === "nested edit")).toBe(true);
+    expect(events.some((row) => row.kind === "exit" && row.isProjected)).toBe(true);
+    expect(events.find((row) => row.id === "inv_nimbus_ii_ev_0")?.postMoney).toBe("28000000");
   });
 
   it("LP A commitment query does not include LP B", () => {
