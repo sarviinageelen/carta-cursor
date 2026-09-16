@@ -2,7 +2,7 @@
   "project": "Carta Fund ERP independent local prototype",
   "prepared_on": "2026-09-16",
   "purpose": "Initial implementation coverage, not evidence of implementation or executed tests.",
-  "current_milestone": 0,
+  "current_milestone": 1,
   "status_legend": {
     "implementation": [
       "not_started",
@@ -236,16 +236,27 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "partial",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]"
+      ],
+      "code_paths": [
+        "src/app/funds/[fundId]/page.tsx",
+        "src/server/queries.ts",
+        "src/domain/portfolio.ts",
+        "src/domain/metrics.ts"
+      ],
       "test_paths": [],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Fund detail shows derived paid-in/distributions/residual and DPI/RVPI/TVPI from events. Construction vs Current selection, charts, and monthly model are not yet built."
+      ],
       "limitations": [],
-      "remaining_tasks": []
+      "remaining_tasks": [
+        "Add Construction/Current toggle, deployment/reserve charts with data tables, and the monthly cash-flow model."
+      ]
     },
     {
       "id": "FF11",
@@ -281,16 +292,30 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "partial",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
-      "test_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/funds/[fundId]",
+        "/funds/[fundId]/investments/[investmentId]"
+      ],
+      "code_paths": [
+        "src/app/funds/[fundId]/page.tsx",
+        "src/app/funds/[fundId]/investments/[investmentId]/page.tsx",
+        "src/components/AddEventForm.tsx",
+        "src/server/actions.ts"
+      ],
+      "test_paths": [
+        "src/domain/__tests__/portfolio.test.ts"
+      ],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Investments table with status/invested/distributions/residual/gross MOIC, plus an investment detail with a dated-event editor that persists. Filters, saved views, configurable columns, and export are not yet built."
+      ],
       "limitations": [],
-      "remaining_tasks": []
+      "remaining_tasks": [
+        "Add search/filter/sort, configurable columns, saved views, and export."
+      ]
     },
     {
       "id": "FF13",
@@ -768,16 +793,26 @@
       "source_visual_verified": false,
       "initial_milestone": 1,
       "milestone_note": "Earliest planned implementation milestone; the full family may finish in later milestones.",
-      "implementation_status": "not_started",
+      "implementation_status": "partial",
       "verification_status": "not_run",
-      "runtime_classification": "not_selected",
-      "routes": [],
-      "code_paths": [],
+      "runtime_classification": "local_real",
+      "routes": [
+        "/home"
+      ],
+      "code_paths": [
+        "src/app/home/page.tsx",
+        "src/server/queries.ts",
+        "src/domain/portfolio.ts"
+      ],
       "test_paths": [],
       "browser_evidence": [],
-      "assumptions": [],
+      "assumptions": [
+        "Firm overview implemented as a consolidated table + metric tiles; the entity graph view is not yet built."
+      ],
       "limitations": [],
-      "remaining_tasks": []
+      "remaining_tasks": [
+        "Add interactive entity graph with node selection and a table alternative."
+      ]
     },
     {
       "id": "ERP02",
@@ -1542,9 +1577,11 @@
       "id": "AC18",
       "title": "IRR input quality",
       "source_ids": [],
-      "status": "not_run",
-      "test_paths": [],
-      "actual_result": null,
+      "status": "passed",
+      "test_paths": [
+        "src/domain/__tests__/irr.test.ts"
+      ],
+      "actual_result": "ACT/365F IRR fixture (-100 on 2025-01-01, +110 on 2026-01-01) returns 10%; no-sign-change and multiple-sign-change cases return typed statuses/warnings.",
       "notes": []
     },
     {
@@ -1748,11 +1785,11 @@
     }
   ],
   "checks": {
-    "lint": "not_run",
-    "typecheck": "not_run",
-    "unit_tests": "not_run",
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit_tests": "passed",
     "browser_tests": "not_run",
-    "build": "not_run",
+    "build": "passed",
     "browser_visual_review": "not_run"
   }
 }
