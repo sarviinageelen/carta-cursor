@@ -143,7 +143,12 @@ export async function saveInvestmentAction(formData: FormData) {
     postMoney?: string | null;
     preMoney?: string | null;
   }>;
-  persistInvestmentDraft({ investmentId, caseId, version, events: raw });
+  try {
+    persistInvestmentDraft({ investmentId, caseId, version, events: raw });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Save failed";
+    redirect(`/funds/${fundId}/forecasting/investments/${investmentId}?error=${encodeURIComponent(message)}`);
+  }
   revalidatePath(`/funds/${fundId}/forecasting/investments/${investmentId}`);
 }
 

@@ -13,10 +13,13 @@ import { today } from "@/server/clock";
 
 export default async function InvestmentDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ fundId: string; investmentId: string }>;
+  searchParams: Promise<{ error?: string }>;
 }) {
   const { fundId, investmentId } = await params;
+  const { error } = await searchParams;
   const investment = getDb().select().from(schema.investments).where(eq(schema.investments.id, investmentId)).get();
   if (!investment) notFound();
   const fund = getDb().select().from(schema.legalEntities).where(eq(schema.legalEntities.id, fundId)).get();
@@ -34,6 +37,7 @@ export default async function InvestmentDetailPage({
         title={investment.name}
         description="Investment performance cases belong to this investment. Fund scenarios are separate. Nested event edits persist only through Save Changes."
       />
+      {error ? <Callout tone="warning" title="Save blocked">{error}</Callout> : null}
       <Panel className="flex flex-wrap">
         <Metric label="Invested" value={<Money value={metrics.invested} />} />
         <Metric label="Unrealized" value={<Money value={metrics.unrealized} />} />

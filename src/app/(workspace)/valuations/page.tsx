@@ -11,16 +11,19 @@ import { today } from "@/server/clock";
 
 export default async function ValuationsPage() {
   const valuations = getDb().select().from(schema.valuations).all();
+  const companies = getDb().select().from(schema.companies).all();
   const navBefore = accountNet("fund_nb_ii", "1400", today());
   return (
     <div className="space-y-4">
       <PageHeader title="Valuation workbench" description="Draft edits do not change booked NAV. Posting is explicit, idempotent, and writes a journal." />
-      <Callout title="Booked Fund II investments FV">{navBefore} — draft rows below do not affect this until posted.</Callout>
+      <Callout title="Booked Fund II investments FV">
+        <Money value={navBefore} exact /> — draft rows below do not affect this until posted.
+      </Callout>
       <Panel>
         <DataTable
           columns={["Company", "As of", "Status", "Equity", "Fund NAV impact", "Post"]}
           rows={valuations.map((row) => [
-            row.companyId,
+            companies.find((company) => company.id === row.companyId)?.name ?? row.companyId,
             row.asOfDate,
             <Badge key={row.id} tone={row.status === "posted" ? "success" : "warning"}>
               {row.status}

@@ -2331,8 +2331,8 @@
     "lint": "passed",
     "typecheck": "passed",
     "unit_tests": "passed",
-    "browser_tests": "not_run",
+    "browser_tests": "partial",
     "build": "passed",
-    "browser_visual_review": "not_run"
+    "browser_visual_review": "passed"
   }
 }

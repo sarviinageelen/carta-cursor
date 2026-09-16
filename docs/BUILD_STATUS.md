@@ -6,14 +6,14 @@ Independent local prototype of connected Fund Forecasting + Fund ERP. Synthetic 
 
 ## Milestone
 
-Milestone 6 implementation is in the repository: scaffold, schema, seed, domain engine, four demo journeys, remaining ERP surfaces, Scenario Builder comparison, Construction sections 4–7 editors, and Time Machine. Browser visual review of the four journeys is the remaining verification pass.
+Milestone 6 is implemented and browser-exercised. Construction vs Current Forecast, Scenario Builder overlays, Time Machine as-of views, valuation posting, LP disclosure cutoffs, multi-entity waterfall modeling, and simulated distributions all mutate persistent SQLite state.
 
 ## Working journeys
 
-- A. Construction / investments / Current Forecast / Scenario Builder (`/funds/fund_nb_ii/forecasting/*`)
-- B. Data collection / KPI review / draft vs posted valuation / ledger NAV
-- C. Fundraising closing / capital call receipts / LP Portal disclosure cutoff
-- D. Multi-entity waterfall run vs simulated distribution with missing-bank branch
+- A. Construction / investments / Current Forecast / Scenario Builder / Time Machine (`/funds/fund_nb_ii/forecasting/*`)
+- B. Data collection reject → draft valuation → explicit post → ledger NAV increase
+- C. Fundraising countersign → capital-call receipts → LP Portal (Atlantic vs Meridian cutoff)
+- D. Multi-entity waterfall run vs separate simulated distribution (`SIM-` refs, no bank transfer)
 
 ## Checks actually run
 
@@ -21,11 +21,20 @@ Milestone 6 implementation is in the repository: scaffold, schema, seed, domain 
 | --- | --- | --- |
 | Lint | `pnpm lint` | passed (exit 0) |
 | Typecheck | `pnpm typecheck` | passed (exit 0) |
-| Unit/workflow tests | `pnpm test` | passed — 33 tests, 2 files |
-| Production build | `pnpm build` | passed — Next.js 16.3.5, all listed routes dynamic |
+| Unit/workflow tests | `pnpm test` | passed — 34 tests, 2 files |
+| Production build | `pnpm build` | passed — Next.js 16.3.5 |
 | Database setup | `pnpm db:setup` | seeded `data/fund-erp.sqlite` (gitignored) |
-| Playwright e2e | `pnpm test:e2e` | not yet run in this verification pass |
-| Browser visual review | manual journeys A–D | not yet run |
+| Browser journeys | headed Playwright against `pnpm dev` + earlier computer-use pass | Journey A video; screenshots for A–D |
+
+Browser observations:
+
+- Home Fund II TVPI is a positive matched multiple after credit-normal paid-in (was −0.59x before the accounting sign fix).
+- Construction deal count 21.95 is unchanged in Current Forecast, Scenario overlay, and Time Machine as-of 2025-06-30.
+- Heavier follow-on scenario remaining $73,000,000 → $91,250,000; deal count 21.95 on both columns; no Apply-to-base.
+- Nested Save Changes preserves Nimbus post-money / projected exit (`$3,080,000` unrealized). Version conflicts now redirect with an error instead of a blank page.
+- Posting a Nimbus draft increased booked FV (e.g. ~$15.0M → ~$19.8M) and wrote `valuation_posting` journals. Remaining drafts stay unposted.
+- Meridian LP Portal cutoff `2025-12-31` omits later notices; other LP names are not in the payload.
+- Waterfall run produces stakeholder proceeds without paying anyone. Distributions use `SIM-` payment refs after simulated bank confirmation.
 
 ## Assumptions
 
@@ -34,18 +43,17 @@ Milestone 6 implementation is in the repository: scaffold, schema, seed, domain 
 - European waterfall profile only; American/deal-by-deal is typed `unavailable`
 - Nested save: client draft until parent Save Changes
 - Optimistic versioning on investment save (intentional deviation from last-save-wins)
-- Scenario overlays: `followOnBoost` / `remainingMultiplier` / `exitHaircut` applied to Current Forecast snapshot; construction deal counts stay inception values
-- Prototype accounting policy `prototype_capital_activity_v1` (notice vs effective-date vs receipt) — not Carta’s verified LPA engine
+- Scenario overlays: `followOnBoost` / `remainingMultiplier` / `exitHaircut` applied to Current Forecast snapshot
+- Prototype accounting policy `prototype_capital_activity_v1`
 
 ## Deliberate deviations / unsupported
 
-- OPM/backsolve, American waterfall, PIK loans remain unsupported and are labeled, not silently substituted
-- Charting often uses dense tables plus metric cards rather than decorative charts
-- External banking, tax filing, KYC, signatures, formation, email, Ramp are labeled simulations
-- Source evidence for original screens remains D; prototype tests do not re-rate source evidence to V
+- OPM/backsolve, American waterfall, PIK loans remain unsupported and labeled
+- External banking, tax, KYC, signatures, formation, email, and Ramp are labeled simulations
+- Source evidence for original screens remains D
 
 ## Remaining work
 
-- Browser verification of journeys A–D and visual polish
-- Playwright smoke against a running server
-- Fill tracker `verification_status` / `browser_evidence` after the visual pass
+- Company/fund display names on a few operational tables still mix IDs in some CRM lists
+- Playwright `e2e/smoke.spec.ts` is a thin smoke; headed demo scripts live in `scripts/browser-demo*.mjs`
+- American waterfall / OPM engines remain intentionally unimplemented

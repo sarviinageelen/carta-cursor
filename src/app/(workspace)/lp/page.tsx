@@ -22,11 +22,17 @@ export default async function LpPortalPage() {
     : null;
   const cutoff = policy?.cutoffDate ?? null;
   const commitments = getDb().select().from(schema.commitments).where(eq(schema.commitments.investorId, investorId)).all();
+  const funds = getDb().select().from(schema.legalEntities).all();
+  const allocations = getDb()
+    .select()
+    .from(schema.capitalAllocations)
+    .all()
+    .filter((row) => row.investorId === investorId);
   const notices = getDb()
     .select()
     .from(schema.capitalActivities)
     .all()
-    .filter((row) => lpMaySeeDate(session, row.noticeDate, cutoff));
+    .filter((row) => allocations.some((alloc) => alloc.activityId === row.id) && lpMaySeeDate(session, row.noticeDate, cutoff));
   const otherLp = getDb().select().from(schema.investors).all().filter((row) => row.id !== investorId);
   return (
     <div className="space-y-4">
@@ -42,7 +48,7 @@ export default async function LpPortalPage() {
           columns={["Fund", "Commitment", "Status"]}
           rows={commitments.map((row) => [
             <Link key={row.id} className="text-accent" href={`/lp/funds/${row.fundId}`}>
-              {row.fundId}
+              {funds.find((fund) => fund.id === row.fundId)?.name ?? row.fundId}
             </Link>,
             <Money key={`${row.id}-a`} value={row.amount} />,
             row.status,
@@ -52,7 +58,10 @@ export default async function LpPortalPage() {
       <Panel>
         <DataTable
           columns={["Notice", "Amount", "Date"]}
-          rows={notices.map((row) => [row.memo, <Money key={row.id} value={row.amount} />, row.noticeDate])}
+          rows={notices.map((row) => {
+            const alloc = allocations.find((item) => item.activityId === row.id);
+            return [row.memo, <Money key={row.id} value={alloc?.amount ?? row.amount} />, row.noticeDate];
+          })}
         />
       </Panel>
       <p className="text-[12px] text-muted">As-of {today()}.</p>

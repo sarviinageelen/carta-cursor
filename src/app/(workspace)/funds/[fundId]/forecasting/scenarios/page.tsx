@@ -5,7 +5,7 @@ import { Input, Label } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Callout, Metric, PageHeader, Panel } from "@/components/ui/panel";
 import { DataTable } from "@/components/data-table";
-import { Money } from "@/components/money";
+import { Money, money } from "@/components/money";
 import { getDb, schema } from "@/server/db";
 import { currentForecastForFund } from "@/server/services/forecast";
 import { today } from "@/server/clock";
@@ -39,8 +39,8 @@ export default async function ScenariosPage({ params }: { params: Promise<{ fund
         description="A scenario overlays selected assumptions. Recalculate and Save are distinct. There is no Apply-to-base action."
       />
       <Callout title="Baseline isolation">
-        Baseline current-forecast remaining {liveBaseline ? liveBaseline.modeledRemaining : "n/a"}. Scenario edits do not
-        mutate construction, actual investments, or posted journals.
+        Baseline current-forecast remaining {liveBaseline ? money(liveBaseline.modeledRemaining) : "n/a"}. Scenario edits
+        do not mutate construction, actual investments, or posted journals.
       </Callout>
       {liveBaseline ? (
         <Panel className="flex flex-wrap">
@@ -84,7 +84,7 @@ export default async function ScenariosPage({ params }: { params: Promise<{ fund
                     Number(parsed.baseline.projectedDealCountUnchangedFromConstruction).toFixed(2),
                     Number(parsed.scenario.projectedDealCountUnchangedFromConstruction).toFixed(2),
                   ],
-                  ["Actual invested (unchanged)", parsed.baseline.actualInvested, parsed.scenario.actualInvested],
+                  ["Actual invested (unchanged)", <Money key={`${scenario.id}-bi`} value={parsed.baseline.actualInvested} />, <Money key={`${scenario.id}-si`} value={parsed.scenario.actualInvested} />],
                 ]}
               />
             ) : (
